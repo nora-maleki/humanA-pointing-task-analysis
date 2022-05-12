@@ -359,7 +359,9 @@
 %doc% create a document which is printed on both, left side and right side.
 %doc%
 
-\newcommand{\todo}[1]{\textcolor{red}{#1}\PackageWarning{TODO:}{TODO #1!}}
+\newcommand{\todo}[1]{\textcolor{red}{#1}\PackageWarning{TODO:}{TODO #1}}
+
+\newcommand{\emphasize}{\fontfamily{qcr}\selectfont}
 
 \documentclass[%
 fontsize=\myfontsize,%% size of the main text
