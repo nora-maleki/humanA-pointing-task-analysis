@@ -1,76 +1,61 @@
 \chapter{Methodology}
 
+\section{Participants}
+\todo{
+	- total number of participants \\
+	- gender \\
+	- average + standard deviation of age \\
+	- all were uni students \\
+	- written consent \\
+	- compensation (either VP or 5 euro/hour) \\
+	- 3 participants were excluded due to not being able to comply with the experimental requirements. (come in less than 3 days and more than 4 hours apart) \\
+	- due to Covid-19 pandemic sessions are conducted according to the laboratory hygiene regulations and with a mask under 3G rule \\
+}
+
+
 \section{Experimental Design}
 
 \todo{
-	- are there any questionnaires used in the study? \\
+	- explain and integrate the questionnaire into the text \\
 }
 
 \subsection{City}
 
-This study is conducted in a virtual reality (VR) city with the area of about \todo{1 km\textsuperscript2}. The city is consisted of \todo{\# of buildings} buildings, from which 4 are landmarks. 56 of the buildings are used in the experimental task of this study. 28 are shops {\emphasize(context meaningful)} and 28 are normal buildings {\emphasize(not context meaningful)} \todo{are these numbers correct? the landmarks are also in task, right?}. These 56 buildings are distinguishable by the avatars \todo{[or agents?]} in front of them and an artwork on one of their walls. Avatars belonging to shops take the pose of an act according to the functionality of that store {\emphasize(meaningful)}, e.g., has a book in the hand in front of a bookstore, or are just standing in front of the building {\emphasize(standing avatar)}. The artworks on the shops are also depicting the kind of the shop.
+This study is conducted in a virtual reality (VR) city with an area of about 1 km\textsuperscript2. The city is consisted of 284 buildings. 56 buildings are used in the experimental task of this study from which 4 are global landmarks, 26 are {\emphasize context meaningful} locations, e.g., shops, construction sites, and 26 are residential, {\emphasize not context meaningful} buildings. These 56 buildings have human agents in front of them and an artwork on one of their walls. Avatars belonging to shops take the pose of an act according to the functionality of that store {\emphasize(meaningful)}, e.g., has a book in the hand in front of a bookstore, or are just standing in front of the building {\emphasize(standing avatar)}. The artworks on the shops are also depicting the kind of the shop.
 
 \todo{
 	- FIG: include a map \\
 }
 
 \subsection{Application and Technology}
+
+The application of the experiment is implemented utilizing "unity" version 2019.4.11f1. The assets of the city, e.g., buildings, streets were obtained from a previous study called SpaRe, made also at the university of Osnabrück. They were modified with "blender" version 2.83 LTS (Long Term Support), as were also the human agents picked from "Adobe Mixamo" collection. They were modified for this experiment in a way that some contextual objects were added to the human agents in front of context meaningful buildings with regard to the context of the building. \\
+The experiment consisted of two separate parts, i.e., Exploration and Testing.  Each part had the option to choose the language of the instructions, i.e., German and English. The experiment was conducted using a "HTC Vive Pro Eye" VR-Headset. For the virtual moving purposes inside the virtual city the participants were given "Index valve" controller to navigate inside a city by moving the joystick of the controller. \todo{did they have 2 controllers or one? If two, why?}
+
+\section{Experimental Procedure}
+
+For both parts of the experiments participants were seated on a backless rotating chair to enables them to physically rotate in the virtual city. Any forward, backward and sideways movement were done utilizing the controllers.
+
+\subsection{Exploration}
+
+The exploration consisted of 5 sessions. The sessions had to be no more than 3 days and no less than 4 hours apart. \\
+The total duration of each session was 30 minutes broke down into 10 minutes segments for breaks to reduce the possibility of motion sickness. Before starting each segment the built-in eye-tracker of the VR-Headset was calibrated and validated. \\
+
+After inserting participant-ID and choosing the preferred language of the participant the exploration session started with a tutorial. The tutorial was held in a scene separate from the main city. The purpose of the tutorial was to allow the participant to move around, get acquainted with the controller and practice the possible movement options the experiment allowed for. After participants confirmed their confidence in using the controllers the experiment was continued to the exploration session. In the main city participants were advised to explore the city freely.
+
+\subsection{Testing}
+
+\todo{how long?} after the last exploration session the testing session was conducted. The testing comprised of just one session of approximately 2 hours. The testing starts after inputting the participant-ID and choosing the language. There is then a tutorial scene outside of the main city used in the experiment for participants to get acquainted with how the to use the controller for performing the tasks. Before presenting the trials and in intervals of \todo{[how big are the segments? does it consistent with the number of bundles?]} eye-tracker were calibrated and validated. \\
+
+The testing consists of 336 trials divided into 12 trial bundles \todo{(see figure X)}. All movements except the rotation were blocked for the whole testing session to maintain the consistence of participant position between all participants. The trials were randomized for each participant. \todo{[adding more detail about the randomization after looking into the code. also regarding randomization of the order of starting locations]} \\
+
+Each trial is a pointing task performed from 28 different starting locations spread out through the city. At each starting point \todo{[number of consecutive trials at each starting location]} were performed. In each trial a photo of one of the task buildings is presented at the top center of the screen. The participants have the option to press a button to bring the picture to the middle of the screen and as soon as they release it the photo moves back to the upper part of the screen. Since there is no visual virtual body, there is a green dashed laser beam attached to the virtual hand of the participants which will move as they move their hand. The purpose of the laser beam is to assist the participant with the visualization of which direction they are pointing at. The maximum duration of each trial is \todo{30 seconds}. If there is no answer given to the task, at the \todo{20th second} a countdown timer appears on the bottom center of the screen and terminates the trial after 10 seconds if there is still no answers given.
+The task was to point to the direction of the building presented in the photo from the position the participants were at. With a button press it was possible to lock on a direction and the option to either confirm the chosen direction with the same button or cancel it with another button. Moving on to the next trial was a result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times are gathered during each trial. The human agents are present during the testing in the city at their previously designated positions and poses. A gray screen fade out and fade in occurs when transporting participants from their current to another starting location. This serves the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city is happening.
+
 \todo{
-	- option of English or German \\
-	- participant id \\
-	- unity version  \\
-	- blender version  \\
-	- htc vive headset \\
-	- SRanipal version \\
-	- index valve controller \\
+	- include photo of the trial  \\
 }
 
-\section{Exploration}
-\todo{
-	- 5 exploration sessions \\
-	- each session 30 minutes \\ 
-	- free walking and exploring  \\
-	- sitting on a chair \\
-	- walking via joystick, rotation via body \\
-}
-
-\section{Experimental procedure}
-
-\todo{
-	- 1 experimental session [mean duration?]  \\
-	- tutorial  \\
-	- blocks \\
-	- randomization \\ 
-	- number of the whole trials [336?] \\
-	- calibrate, validate eye tracker [how many times?] \\
-	- [when is the pause?] \\
-	- trial's procedure details \\
-	- 30s max length of trial \\
-	- add the time of countdown appearance
-	- laser beam  \\
-	- horizontal movement is locked. Only rotation on the chair they are sitting on is allowed \\
-	- photos from buildings with and without avatars (target to point to) \\
-	- ability to center the photo \\
-	- cancellation and confirmation of the selected direction  \\
-	- avatars are present in the city during the task \\
-	- 28 starting locations that are spread throughout the city are used for the tasks \\
-	- using fade when transporting participants to another location to avoid inducing motion sickness and leaking environmental information \\
-	- eye tracking data is gathered  \\
-	- behavioral data is gathered \\
-	- include photo  \\
-}
-
-\section{Participants}
-\todo{
-	- total number of participants \\
-	- gender \\
-	- average + standard deviation of age \\
-	- [were all of them uni students?] \\
-	- written consent \\
-	- compensation \\
-	- whether anyone was excluded (if yes, why?) \\
-	- due to Covid-19 pandemic sessions are conducted according to the laboratory hygiene regulations and with a mask [under 2G rule?] \\
-}
 
 \section{Analysis method}
 \todo{
