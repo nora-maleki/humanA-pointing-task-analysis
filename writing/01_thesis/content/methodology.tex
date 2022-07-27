@@ -41,7 +41,7 @@ After inserting participant-ID and choosing the preferred language of the partic
 
 No longer than 3 days and no less than 4 hours after the last exploration session the testing session was conducted. The testing comprised of just one session of approximately 2 hours. The testing starts after inputting the participant-ID and choosing the language. There is then a tutorial scene outside of the main city used in the experiment for participants to get acquainted with how to use the controller for performing the tasks. Before presenting the trials and in intervals of 112 trials eye-tracker was calibrated and validated. \\
 
-The testing comprised 336 trials. There were 28 starting locations to perform the pointing task from in the city. The distribution of the starting locations can be seen in figure \ref{fig:starting_locs}. At each starting location 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without avatars). Some examples are shown in figure \ref{fig:target_photos}. Each of the four conditions of the experiment, i.e., context meaningful with human agent present, context meaningful with no human agent present, non-context meaningful with human agent present, non-context meaningful with no human agent present built up 25\% of the trials.  The starting locations themselves were consistent for all participants and their order was randomized for each participant. All movements except the rotation were blocked for the whole testing session to maintain the consistence of the participants' position for in starting locations between participants. \\
+The testing comprised 336 trials. There were 28 starting locations to perform the pointing task from in the city. The distribution of the starting locations can be seen in figure \ref{fig:starting_locs}. At each starting location 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without avatars). Some examples are shown in figure \ref{fig:target_photos}. Each of the four conditions of the experiment, i.e., context meaningful with human agent present {\emphasize(CmA)}, context meaningful with no human agent present {\emphasize(CmANo)}, non-context meaningful with human agent present {\emphasize(Sa)}, non-context meaningful with no human agent present {\emphasize(SaNo)} built up 25\% of the trials.  The starting locations themselves were consistent for all participants and their order of execution was randomized for each participant. All movements except the rotation were blocked for the whole testing session to maintain the consistence of the participants' position in the starting locations between participants. \\
 
 
 \begin{figure}[h]
@@ -57,38 +57,44 @@ The testing comprised 336 trials. There were 28 starting locations to perform th
 	\centering
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/45_S(green store)_A.PNG}
-		\caption{shop with human agent}
+		\caption{CmA}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/02_S(boulangerie)_noA.PNG}
-		\caption{shop without human agent}
+		\caption{CmANo}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/05_S(Maraz cafe)_A.PNG}
-		\caption{shop with human agent}
+		\caption{CmA}
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/07_R(bear)_noA.PNG}
-		\caption{residential without human agent}
+		\caption{SaNo}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/25_R(alogator)_A.PNG}
-		\caption{residential with human agent}
+		\caption{Sa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.32\linewidth}
 		\includegraphics[width=\linewidth]{figures/54_R(tree)_noA.PNG}
-		\caption{residential without human agent}
+		\caption{SaNo}
 	\end{subfigure}
 
-	\caption{Examples of photos shown in the pointing task as target buildings.}
+	\caption{Examples of photos shown in the pointing task as target buildings. A selection of all four experimental conditions.\\
+	\scriptsize{
+		\textbf{CmA:}   context meaningful with human agent present\\
+		\textbf{CmANo:} context meaningful without human agent present\\
+		\textbf{Sa:}    not context meaningful with human agent present\\
+		\textbf{SaNo:}  not context meaningful without human agent present}
+}
 	\label{fig:target_photos}
 \end{figure}
 
 
-Each trial was a pointing task performed from 28 different starting locations spread out through the city. At each starting location 12 consecutive trials were performed. In each trial a photo of one of the task buildings (with or without human agent in front of it) was presented at the top center of the screen. The participants had the option to press a button to bring the picture to the middle of the screen and as soon as they released the button the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen and terminated the trial after 10 seconds if there was still no answer given. \\
+Each trial was a pointing task performed from the 28 different starting locations spread out through the city. At each starting location the 12 consecutive trials were performed. In each trial a photo of one of the task buildings (with or without human agent in front of it) was presented at the top center of the screen \todo{(see figure X)}. The participants had the option to press a button to bring the picture to the middle of the screen \todo{(see figure X)} and as soon as the button was released the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam \todo{(see figure X)} attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen \todo{(see figure X)} and terminated the trial after 10 seconds if there was still no answer given. \\
 
-Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. With once pressing the button it locked the laser beam onto a direction and detached it from the hand. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and poses in the exploration sessions. A gray screen fade out and fade in occurred while transporting the participants from their current location to another starting location. This served the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city.
+Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. With once pressing the button it locked the laser beam onto a direction and detached it from the hand. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and poses in the exploration sessions. A gray screen fade out and fade in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city.
 
 \todo{
 	- include photo of the trial  \\
