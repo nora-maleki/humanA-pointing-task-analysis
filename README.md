@@ -1,4 +1,4 @@
-# Basic template for an experimental project
+# The effect of the task locations on a pointing task performed in a VR spatial navigation study (HumanA)
 
 
-This repository is created as a homework project for the course Experimental Psychology Lab taught by Prof. Dr. Michael Franke at University of Osnabrück, SoSe2021
+This repository contains the B.Sc. thesis of Nora Maleki for the study program Cognitive Sciene at the university of Osnabrück.
