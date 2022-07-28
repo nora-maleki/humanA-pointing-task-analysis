@@ -103,24 +103,28 @@ Selecting an answer for the task, i.e., selecting the direction of the target bu
 
 \section{Analysis method}
 
-The data of this experiment is gathered from unity in JSON format. All the further processes for analysis were done in Python \footnote{Programming language Python: \href{https://www.python.org}{https://www.python.org} - version 3.8}. \\
+The data of this experiment is gathered from unity in JSON format. All the further processes for analysis were done in Python \todo{ref} \footnote{Programming language Python: \href{https://www.python.org}{https://www.python.org} - version 3.8}. \\
 After importing and converting the data into a Pandas \footnote{Python's Pandas library: \href{https://pandas.pydata.org}{https://pandas.pydata.org} - version 1.4.2} dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular error between the participant's chosen direction and the actual target position. 
 
 \subsection{Preprocessing}
 
-Different functions of Pandas and Numpy \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. The main preprocessing steps are as follow:
+Different functions of Pandas and Numpy \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. \\
+The main preprocessing steps are as follow:
 
 \begin{enumerate}
-	\item Cleaning irrelevant columns.
-	\item Merging the dataframe containing the information about the starting locations with the main dataframe gathered from the participants.
-	\item Calculating the absolute angular error between participant's chosen direction and the actual location of the target building \footnote{In all calculations involving directions, only the right direction (x) and the forward direction (z) are taken into account.}.	
+	\item Removed irrelevant columns.
+	\item Merged the dataframe containing the information about the starting locations with the main dataframe gathered from the participants.
+	\item Calculated the absolute angular error between participant's chosen direction and the actual location of the target building.
 	
 	\begin{enumerate}
 		%\item Calculating the absolute Euclidean distance between the participant’s position and the target building. 
-		\item Translating the target building's center position (Tpos) by the participant's body position (Ppos) to make the body position the origin of the following calculations.
+		\item Translated the target building's center position (Tpos) by the participant's body position (Ppos) to be able to take the body position as the origin (0,0).
 			\begin{center}
-				$Tpos_{translated}= Tpos_{x,z} - Ppos_{x,z}$
+				$Tpos_{x,z\_translated}= Tpos_{x,z} - Ppos_{x,z}$
 			\end{center}
+		The direction vector of participant's chosen direction doesn't need to be translated because unity's output for a direction is a normalized vector and therefore it's origin lies already at (0,0).\\
+		
+		\item Now that body position is at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction to the positive x-axis and the target building to the positive x-axis were calculated using Numpy's arctan2(z, x) \todo{ref} \footnote{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html\#r73eacd397847-1} function. This function calculates the angle in radian between the positive x-axis and the vector given to the function as parameter \todo{cite arctan2}. Since due to the translation done in step a all the body positions were translated implicitly to the origin (0,0), we were able to pass the z and x coordinates of the target building and the chosen direction to the arctan2 function separately to calculate the angle between them and the positive x-axis. The results are directly translated to degree utilizing Numpy's rad2deg() \todo{ref} \footnote{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html} function.
 		
 	\end{enumerate}
 \end{enumerate}
