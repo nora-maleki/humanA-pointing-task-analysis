@@ -94,7 +94,7 @@ The testing comprised 336 trials. There were 28 starting locations to perform th
 
 Each trial was a pointing task performed from the 28 different starting locations spread out through the city. At each starting location the 12 consecutive trials were performed. In each trial a photo of one of the task buildings (with or without human agent in front of it) was presented at the top center of the screen \todo{(see figure X)}. The participants had the option to press a button to bring the picture to the middle of the screen \todo{(see figure X)} and as soon as the button was released the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam \todo{(see figure X)} attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen \todo{(see figure X)} and terminated the trial after 10 seconds if there was still no answer given. \\
 
-Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. With once pressing the button it locked the laser beam onto a direction and detached it from the hand. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and poses in the exploration sessions. A gray screen fade out and fade in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city.
+Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. With once pressing the button it locked the laser beam onto a direction and detached it from the hand \todo{maybe a figure of the controller with the info?}. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and poses in the exploration sessions. A gray screen fade out and fade in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city.
 
 \todo{
 	- include photo of the trial  \\
@@ -103,14 +103,38 @@ Selecting an answer for the task, i.e., selecting the direction of the target bu
 
 \section{Analysis method}
 
+The data of this experiment is gathered from unity in JSON format. All the further processes for analysis were done in Python \footnote{Programming language Python: \href{https://www.python.org}{https://www.python.org} - version 3.8}. \\
+After importing and converting the data into a Pandas \footnote{Python's Pandas library: \href{https://pandas.pydata.org}{https://pandas.pydata.org} - version 1.4.2} dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular error between the participant's chosen direction and the actual target position. 
+
+\subsection{Preprocessing}
+
+Different functions of Pandas and Numpy \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. The main preprocessing steps are as follow:
+
+\begin{enumerate}
+	\item Cleaning irrelevant columns.
+	\item Merging the dataframe containing the information about the starting locations with the main dataframe gathered from the participants.
+	\item Calculating the absolute angular error between participant's chosen direction and the actual location of the target building \footnote{In all calculations involving directions, only the right direction (x) and the forward direction (z) are taken into account.}.	
+	
+	\begin{enumerate}
+		%\item Calculating the absolute Euclidean distance between the participant’s position and the target building. 
+		\item Translating the target building's center position (Tpos) by the participant's body position (Ppos) to make the body position the origin of the following calculations.
+			\begin{center}
+				$Tpos_{translated}= Tpos_{x,z} - Ppos_{x,z}$
+			\end{center}
+		
+	\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Visualization}
+
+The visualization is done utilizing Matplotlib \footnote{Python's Matplotlib library: \href{https://matplotlib.org}{https://matplotlib.org} - version 3.5.1} and Seaborn \footnote{Python's Seaborn library: \href{https://seaborn.pydata.org}{https://seaborn.pydata.org} - version 0.11.2} libraries.
+
+\subsection{Analysis}
+Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the Statmodels \footnote{Python's Statmodels library: \href{https://www.statsmodels.org/stable/index.html}{https://www.statsmodels.org/stable/index.html} - version 0.13.2} library is used.
+
 \todo{
-	- the data is gathered in JSON format\\
-	- preprocessing step (maybe with chart if applicable) \\
 	- trial removal criteria (timeout) \\
-	- check the assumptions for analysis? \\
-	- linear mixed models (parameters: depvar='absolute\_180\_angles', subject='subject\_id', within=['starting\_loc\_id']) \\
-	- linear mixed models (parameters: depvar='RT', subject='subject\_id', within=['starting\_loc\_id']) \\
-	- maybe check for the effect of buildings as well
-	- maybe other analysis methods
+	- linear mixed models parameters
 }
 
