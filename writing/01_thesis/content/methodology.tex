@@ -46,7 +46,7 @@ The testing comprised 336 trials. There were 28 starting locations to perform th
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=80mm]{figures/starting_locations.png}
+	\includegraphics[width=100mm]{figures/starting_locations.png}
 	\caption{distribution of the starting locations in the city.}
 	\label{fig:starting_locs}
 \end{figure}
@@ -103,12 +103,12 @@ Selecting an answer for the task, i.e., selecting the direction of the target bu
 
 \section{Analysis method}
 
-The data of this experiment is gathered from unity in JSON format. All the further processes for analysis were done in Python \todo{ref} \footnote{Programming language Python: \href{https://www.python.org}{https://www.python.org} - version 3.8}. \\
-After importing and converting the data into a Pandas \footnote{Python's Pandas {\emphasize (pd)} library: \href{https://pandas.pydata.org}{https://pandas.pydata.org} - version 1.4.2} dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular error between the participant's chosen direction and the actual target position. 
+The data of this experiment is gathered from unity in JSON format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. \\
+After importing and converting the data into a pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010} dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular error between the participant's chosen direction and the actual target position. 
 
 \subsection{Preprocessing}
 
-Different functions of Pandas and Numpy {\emphasize (np)} \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. \\
+Different functions of pandas and Numpy {\emphasize (np)} \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. \\
 The main preprocessing steps are as follow:
 
 \begin{enumerate}
@@ -135,9 +135,11 @@ The main preprocessing steps are as follow:
 			$Cdir\_to\_x_{\theta} = np.rad2deg(np.arctan2(Cdir_{z}, Cdir_{x}))$
 		\end{center}
 		
+		\item \todo{add the rest of steps}
 	\end{enumerate}
 \end{enumerate}
 
+\todo{	- trial removal criteria (timeout)}
 
 \subsection{Visualization}
 
@@ -147,7 +149,6 @@ The visualization is done utilizing Matplotlib \footnote{Python's Matplotlib lib
 Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the Statmodels \footnote{Python's Statmodels library: \href{https://www.statsmodels.org/stable/index.html}{https://www.statsmodels.org/stable/index.html} - version 0.13.2} library is used.
 
 \todo{
-	- trial removal criteria (timeout) \\
 	- linear mixed models parameters
 }
 
