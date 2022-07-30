@@ -383,6 +383,8 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
             %% CAUTION: If documentclass will be changed, *many* other things
             %%          change as well like heading structure, ...
 
+\listfiles
+
 \usepackage{etoolbox}
 
 % FIXXME: adopting class usage:
@@ -430,7 +432,6 @@ labelformat=brace, position=top}
 %doc% script documentation how to use this package.
 %doc%
 \usepackage{scrlayer-scrpage} %%  advanced page style using KOMA
-
 
 %doc%
 %doc% \subsection{References}\myimportant
@@ -558,40 +559,40 @@ style=\mybiblatexstyle, %% see biblatex documentation
 %dashed=\mybiblatexdashed, %% do *not* replace recurring reference authors with a dash
 backref=\mybiblatexbackref, %% create backlings from references to citations
 natbib=true, %% offering natbib-compatible commands
-hyperref=true, %% using hyperref-package references
+%hyperref=true, %% using hyperref-package references
 ]{biblatex}  %% remove, if using BibTeX instead of biblatex
 \DeclareLanguageMapping{american}{american-apa}
 
 \addbibresource{\mybibliographyfile} %% remove, if using BibTeX instead of biblatex
 \addbibresource{\myludographyfile} %% remove, if using BibTeX instead of biblatex
 
-\DeclareBibliographyAlias{game}{misc}
-\DeclareSourcemap{
-    \maps{
-        \map{
-            \step[typesource=game,  typetarget=misc, final]
-            \step[fieldset=entrysubtype, fieldvalue=game]
-        }
-    }
-}
+%\DeclareBibliographyAlias{game}{misc}
+%\DeclareSourcemap{
+%    \maps{
+%        \map{
+%            \step[typesource=game,  typetarget=misc, final]
+ %           \step[fieldset=entrysubtype, fieldvalue=game]
+ %       }
+%    }
+%}
 
 % citation style for games
-\DeclareCiteCommand{\citegame}[]%
-  { %prenote \mkbibfootnote
-     \usebibmacro{prenote}%
-  }
-  {   %loopcode
-     \usebibmacro{citeindex}%
-     \printnames{author},
-     \printfield[bibhyperref]{year}.
+%\DeclareCiteCommand{\citegame}[]%
+%  { %prenote \mkbibfootnote
+%     \usebibmacro{prenote}%
+%  }
+ % {   %loopcode
+%     \usebibmacro{citeindex}%
+%     \printnames{author},
+%     \printfield[bibhyperref]{year}.
      %\iffieldundef{url}{}{\url{\thefield{url}}}
-  }
-  {   %sepcode
-     \multicitedelim%
-  }
-  { %post-note
-     \usebibmacro{postnote}
-  }
+%  }
+%  {   %sepcode
+ %    \multicitedelim%
+ % }
+ % { %post-note
+ %    \usebibmacro{postnote}
+ % }
 
 
 %doc%
