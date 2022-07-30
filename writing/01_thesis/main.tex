@@ -112,7 +112,7 @@
 
 %% general metadata:
 
-\newcommand{\mytitle}{Thesis Title}  %% also used for PDF metadata (hyperref)
+\newcommand{\mytitle}{The effect of the task locations on a pointing task performed in a VR spatial navigation study}  %% also used for PDF metadata (hyperref)
 
 \newcommand{\mysubject}{SUBJECT}  %% also used for PDF metadata (hyperref)
 \newcommand{\mykeywords}{KEYWORDS}  %% also used for PDF metadata (hyperref)
@@ -134,7 +134,7 @@
 %\newcommand{\myinstitutehead}{My Institute Head} %% head of institute
 \newcommand{\mysupervisor}{M.Sc. Tracy Lorraine Sánchez Pacheco} %% your supervisor
 \newcommand{\mycosupervisor}{Prof. Dr. rer. nat. Gordon Pipa}
-\newcommand{\mysubmissionmonth}{July} %% month you are handing in
+\newcommand{\mysubmissionmonth}{August} %% month you are handing in
 \newcommand{\mysubmissionyear}{2022} %% year you are handing in
 %\newcommand{\mysubmissiontown}{} %% town of handing in (or \myhometown)
 
@@ -170,13 +170,14 @@
 \usepackage[toc,page]{appendix}
 \geometry{a4paper, portrait, tmargin=1.5in, bmargin=1.5in, outer=1.5in}
 
+
+\addbibresource{references.bib}
+
 %% ========================================================================
 %%%% MISC self-defined commands and settings
 %% ========================================================================
 
 %% ... it's OK to put here your own newcommand/newenvironment-definitions ...
-
-
 
 \newcommand{\myLaT}{\LaTeX{}@TUG\xspace} %% LaTeX@TUG text "logo"
 
@@ -233,7 +234,9 @@
 \include{content/methodology}
 \include{content/results}
 \include{content/conclusion}
-\include{content/references}
+
+\printbibliography[title=References]
+%\include{content/references}
 
 
 \appendix
@@ -244,7 +247,6 @@
 %\printbibliography[subtype=game, title={Ludography}]
 
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
-
 
 %%%% end{document}
 \end{document}
