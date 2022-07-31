@@ -135,33 +135,33 @@ The main preprocessing steps are as follow:
 		\begin{align*}
 			Tpos\_to\_x\_360_{\theta} = & \\
 			& if & \\
-			&& Tpos\_to\_x < 180 \\
+			&& Tpos\_to\_x_{\theta} < 180 \\
 			& then & \\
-			&& 360 + Tpos\_to\_x \\
+			&& 360 + Tpos\_to\_x_{\theta} \\
 			& else & \\
-			&& Tpos\_to\_x
+			&& Tpos\_to\_x_{\theta}
 		\end{align*}
 	
 		\begin{align*}
 			Cdir\_to\_x\_360_{\theta} = & \\
 			& if & \\
-			&& Cdir\_to\_x < 180 \\
+			&& Cdir\_to\_x_{\theta} < 180 \\
 			& then & \\
-			&& 360 + Cdir\_to\_x \\
+			&& 360 + Cdir\_to\_x_{\theta} \\
 			& else & \\
-			&& Cdir\_to\_x
+			&& Cdir\_to\_x_{\theta}
 		\end{align*}
 		
 		\item Calculated the angular difference between the selected direction {\emphasize (Cdir\_to\_x\_360)} and the target building {\emphasize (Tpos\_to\_x\_360)}. They were directly converted to the signed 2 quadrant environment.
 		
 		\begin{align*}
-			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360 - Cdir\_to\_x_360) + 180) \% 360 - 180
+			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360_{\theta} - Cdir\_to\_x\_360_{\theta}) + 180) \% 360 - 180
 		\end{align*}
 	
 		\item The final step was to create {\emphasize absolute\_180\_angles} (see figure \ref{fig:angular_dev_dists}), the dependant variable for the main analysis in LMM. This variable stores the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values is that the direction of the deviation is not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values is done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
 		
 		\begin{align*}
-			absolute\_180\_angles_{\theta} = np.abs(signed\_180\_angles)
+			absolute\_180\_angles_{\theta} = np.abs(signed\_180\_angles_{\theta})
 		\end{align*}
 		
 	\end{enumerate}
