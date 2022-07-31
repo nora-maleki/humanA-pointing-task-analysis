@@ -98,7 +98,7 @@ Selecting an answer for the task, i.e., selecting the direction of the target bu
 
 \section{Analysis method}
 
-The data of this experiment is gathered from unity in JSON \footnote{Introducing JSON: \href{https://www.json.org/json-en.html}{https://www.json.org/json-en.html}} format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. For the preprocessing the pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010} and numpy \autocite{harris2020array} libraries, and for the analysis python's statmodels \autocite{seabold2010statsmodels} module were utilized. Matplotlib \autocite{Hunter:2007} and Seaborn \autocite{Waskom2021} were used for the visualizations.\\
+The data of this experiment is gathered from unity in JSON \footnote{Introducing JSON: \href{https://www.json.org/json-en.html}{https://www.json.org/json-en.html}} format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. For the preprocessing the pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010}, numpy \autocite{harris2020array} and scipy \autocite{2020SciPy-NMeth} libraries, and for the analysis python's statmodels \autocite{seabold2010statsmodels} module were utilized. Matplotlib \autocite{Hunter:2007} and Seaborn \autocite{Waskom2021} were used for the visualizations.\\
 
 After importing and converting the data into a pandas dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular deviation of the participant's chosen direction from the actual target position. 
 
@@ -166,6 +166,13 @@ The main preprocessing steps are as follow:
 		\end{align*}
 		
 	\end{enumerate}
+
+	\item Calculated the Euclidean distance from the participant's body position to the target building for each trial. This was done using the Euclidean distance function \footnote{Scipy spatial Euclidean distance: \href{https://docs.scipy.org/doc/scipy-1.8.0/reference/generated/scipy.spatial.distance.euclidean.html\#scipy.spatial.distance.euclidean}{https://docs.scipy.org/doc/scipy-1.8.0/reference/generated/scipy.spatial.distance.euclidean.html\#scipy.spatial.distance.euclidean}} of scipy spatial.
+	
+	\begin{align*}
+		body\_to\_target_{dis} = Euclidean\_distance((Ppos_x, Ppos_z), (Tpos_x, Tpos_z))
+	\end{align*}
+
 \end{enumerate}
 
 
@@ -203,9 +210,9 @@ Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were ch
 
 \subsubsection{Independent variables}
 
-
-
-\todo{
-	- linear mixed models parameters
-}
+\begin{enumerate}
+	\item \textbf{Starting locations:} the 28 different starting locations spread out through the city. See the full list of the locations in appx. \ref{appx:starting_locations}. \\
+	
+	\item \textbf{Distance to the target:} this variable is the distance of the participant to the target building at each starting location.
+\end{enumerate}
 
