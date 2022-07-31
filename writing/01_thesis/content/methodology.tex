@@ -48,7 +48,7 @@ Testing was a pointing task comprised 336 trials performed from 28 different sta
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=100mm]{figures/starting_locations.png}
-	\caption[distribution of starting locations]{distribution of the starting locations in the city.}
+	\caption[Distribution of starting locations]{distribution of the starting locations in the city}
 	\label{fig:starting_locs}
 \end{figure}
 
@@ -115,29 +115,67 @@ The main preprocessing steps are as follow:
 	\begin{enumerate}
 		%\item Calculating the absolute Euclidean distance between the participant’s position and the target building. 
 		\item Translated the target building's center position {\emphasize(Tpos)} by the participant's body position {\emphasize(Ppos)} to be able to derive the translated building center position {\emph{Tpos\_t}} take the body position as the origin at the (0,0) coordinates.
-			\begin{center}
-				$Tpos\_t_{x,z}= Tpos_{x,z} - Ppos_{x,z}$
-			\end{center}
+		
+			\begin{align*}
+				Tpos\_t_{x,z}= Tpos_{x,z} - Ppos_{x,z}
+			\end{align*}
+		
 		The direction vector of participant's chosen direction doesn't need to be translated because unity's output for a direction is a normalized vector and therefore it's origin lies already at (0,0).\\
 		
 		\item Now that body position is at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction {\emphasize(Cdir)} to the positive x-axis and the translated building center position {\emphasize(Tpos\_t)} to the positive x-axis were calculated using numpy arctan2(z, x) \footnote{Numpy arctan2: \href{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}} function. This function calculates the angle in radian between the positive x-axis and the vector given to the function as parameter. \\
 		Due to the translation done in step \emph{a} the body position was implicitly translated to the origin (0,0), i.e., subtracting body position from body position results in (0,0), it was possible to pass the z and x coordinates of the {\emphasize Tpos\_t} and the {\emphasize Cdir} to the arctan2 function separately to calculate the angle between the {\emphasize Cdir} and the positive x-axis {\emphasize (Cdir\_to\_x)} and the {\emphasize Tpos\_t} and the positive x-axis {\emphasize (Tpos\_to\_x)}. The results are directly translated to degree utilizing numpy rad2deg() \footnote{Numpy rad2deg: \href{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}} function.
-		
-		\begin{center}
-			$Tpos\_to\_x_{\theta} = np.rad2deg(np.arctan2(Tpos\_t_{z}, Tpos\_t_{x}))$
-		\end{center}
 	
-		\begin{center}
-			$Cdir\_to\_x_{\theta} = np.rad2deg(np.arctan2(Cdir_{z}, Cdir_{x}))$
-		\end{center}
+		\begin{align*}
+			Tpos\_to\_x_{\theta} & = np.rad2deg(np.arctan2(Tpos\_t_{z}, Tpos\_t_{x})) \\
+			Cdir\_to\_x_{\theta} & = np.rad2deg(np.arctan2(Cdir_{z}, Cdir_{x}))
+		\end{align*}
 		
-		\item \todo{add the rest of steps}
+		\item After creating {\emphasize Tpos\_to\_x} and {\emphasize Cdir\_to\_x} the angles were respectively converted to {\emphasize Tpos\_to\_x\_360} and {\emphasize Cdir\_to\_x\_360} in the 360 degree environment.
+
+		\begin{align*}
+			Tpos\_to\_x\_360_{\theta} = & \\
+			& if & \\
+			&& Tpos\_to\_x < 180 \\
+			& then & \\
+			&& 360 + Tpos\_to\_x \\
+			& else & \\
+			&& Tpos\_to\_x
+		\end{align*}
+	
+		\begin{align*}
+			Cdir\_to\_x\_360_{\theta} = & \\
+			& if & \\
+			&& Cdir\_to\_x < 180 \\
+			& then & \\
+			&& 360 + Cdir\_to\_x \\
+			& else & \\
+			&& Cdir\_to\_x
+		\end{align*}
+		
+		\item Calculated the angular difference between the selected direction {\emphasize (Cdir\_to\_x\_360)} and the target building {\emphasize (Tpos\_to\_x\_360)}. They were directly converted to the signed 2 quadrant environment.
+		
+		\begin{align*}
+			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360 - Cdir\_to\_x_360) + 180) \% 360 - 180
+		\end{align*}
+	
+		\item The final step was to create {\emphasize absolute\_180\_angles} (see figure \ref{fig:angular_dev_dists}), the dependant variable for the main analysis in LMM. This variable stores the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values is that the direction of the deviation is not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values is done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
+		
+		\begin{align*}
+			absolute\_180\_angles_{\theta} = np.abs(signed\_180\_angles)
+		\end{align*}
+		
 	\end{enumerate}
 \end{enumerate}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=150mm]{figures/angular_diff_dist_23.png}
+	\caption[Distribution of the angular error]{distribution of the angular error}
+	\label{fig:angular_dev_dists}
+\end{figure}
 
 \subsection{Analysis}
-Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the python's statmodels module is used.
+Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the python's statmodels module were used.
 
 \todo{
 	- linear mixed models parameters
