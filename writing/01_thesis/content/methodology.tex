@@ -100,7 +100,7 @@ Selecting an answer for the task, i.e., selecting the direction of the target bu
 
 The data of this experiment is gathered from unity in JSON \footnote{Introducing JSON: \href{https://www.json.org/json-en.html}{https://www.json.org/json-en.html}} format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. For the preprocessing the pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010} and numpy \autocite{harris2020array} libraries, and for the analysis python's statmodels \autocite{seabold2010statsmodels} module were utilized. Matplotlib \autocite{Hunter:2007} and Seaborn \autocite{Waskom2021} were used for the visualizations.\\
 
-After importing and converting the data into a pandas dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular error between the participant's chosen direction and the actual target position. 
+After importing and converting the data into a pandas dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular deviation of the participant's chosen direction from the actual target position. 
 
 \subsection{Preprocessing}
 
@@ -109,8 +109,9 @@ Different functions of pandas {\emphasize (pd)} and numpy {\emphasize (np)} used
 The main preprocessing steps are as follow:
 
 \begin{enumerate}
-	\item Removed trials in which the participants did not select any direction. These were the trials that were terminated due to timeout. Hence, only the trials where their respective TimeOut variable was False were kept for the analysis.
-	\item Calculated the absolute angular error between participant's chosen direction and the actual location of the target building.
+	\item Removed trials in which the participants did not select any direction. These were the trials that were terminated due to timeout. Hence, only the trials where their respective TimeOut variable was False were kept for the analysis. \\
+	
+	\item Calculated the participant's chosen direction's absolute angular deviation from the actual location of the target building.
 	
 	\begin{enumerate}
 		%\item Calculating the absolute Euclidean distance between the participant’s position and the target building. 
@@ -158,7 +159,7 @@ The main preprocessing steps are as follow:
 			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360_{\theta} - Cdir\_to\_x\_360_{\theta}) + 180) \% 360 - 180
 		\end{align*}
 	
-		\item The final step was to create {\emphasize absolute\_180\_angles} (see figure \ref{fig:angular_dev_dists}), the dependant variable for the main analysis in LMM. This variable stores the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values is that the direction of the deviation is not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values is done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
+		\item The final step was to create {\emphasize absolute\_180\_angles}, the dependant variable for the main analysis in LMM. This variable stores the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values is that the direction of the deviation is not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values is done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
 		
 		\begin{align*}
 			absolute\_180\_angles_{\theta} = np.abs(signed\_180\_angles_{\theta})
@@ -167,16 +168,20 @@ The main preprocessing steps are as follow:
 	\end{enumerate}
 \end{enumerate}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=150mm]{figures/angular_diff_dist_23.png}
-	\caption[Distribution of the angular error]{distribution of the angular error}
-	\label{fig:angular_dev_dists}
-\end{figure}
+
 
 \subsection{Analysis}
 Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the python's statmodels module were used.
 
+\subsubsection{Dependent variables}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=150mm]{figures/angular_diff_dist_23.png}
+	\caption[Distribution of the angular deviation]{distribution of the angular deviation}
+	\label{fig:angular_dev_dists}
+\end{figure}
 \todo{
 	- linear mixed models parameters
 }
