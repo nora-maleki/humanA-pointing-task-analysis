@@ -87,7 +87,7 @@ Testing was a pointing task comprised 336 trials performed from 28 different sta
 \end{figure}
 
 
-At each starting location the 12 consecutive trials were performed. In each trial a photo of one of the task buildings (with or without human agent in front of it) was presented at the top center of the screen \todo{(see figure X)}. The participants had the option to press a button to bring the picture to the middle of the screen \todo{(see figure X)} and as soon as the button was released the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam \todo{(see figure X)} attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen \todo{(see figure X)} and terminated the trial after 10 seconds if there was still no answer given. \\
+At each starting location the 12 consecutive trials were performed. Before each trial begin a green circular loading bar {\emphasize (Go cue)} was shown in the middle of the screen for 25ms. As soon as the bar was complete, a beep sound was played informing the participants of the start of a new trial. In each trial a photo of one of the task buildings, with or without human agent in front of it (see figure \ref{fig:target_photos}), was presented at the top center of the screen \todo{(see figure X)}. The participants had the option to press the trigger button to bring the picture to the middle of the screen \todo{(see figure X)}. As soon as the button was released the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam \todo{(see figure X)} attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen \todo{(see figure X)} and terminated the trial after 10 seconds if there was still no answer given. \\
 
 Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. With once pressing the button it locked the laser beam onto a direction and detached it from the hand \todo{maybe a figure of the controller with the info?}. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or by running out of time. Behavioral and technical data, e.g., the chosen direction, participant position and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and poses in the exploration sessions. A gray screen fade out and fade in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving in the city.
 
@@ -175,13 +175,35 @@ Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were ch
 
 \subsubsection{Dependent variables}
 
+\begin{enumerate}
+	\item \textbf{Absolute angular deviation} {\emphasize (absolute\_180\_angles)}: the absolute value of the angular deviation of the direction chosen by the participant from the actual location of the target building shown at each trial. This variable has the mean of 48.08 with the standard deviation of 44.30, and median of 33.70. (See figure \ref{fig:angular_dev_dists})
+	
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=150mm]{figures/angular_deviation_hist_box_23.png}
+		\caption[Distribution of the absolute angular deviation]{distribution of the absolute angular deviation}
+		\label{fig:angular_dev_dists}
+	\end{figure}
 
-\begin{figure}[h]
+	\item \textbf{Reaction times} {\emphasize (RT)}: this variable stores the duration between start of each trial and the time the participants confirmed a direction as their respond. The begin timestamp of the trial is directly after the go cue is completed and the end timestamp instantly after the response is given. Calculating the duration is done in unity. This variable has the mean of 7.77 with the standard deviation of 5.56, and median of 6.06. (See figure \ref{fig:rt_dists})
+	
+	\begin{align*}
+		RT = end\_timestamp - begin\_timestamp
+	\end{align*}
+
+	\begin{figure}[h]
 	\centering
-	\includegraphics[width=150mm]{figures/angular_diff_dist_23.png}
-	\caption[Distribution of the angular deviation]{distribution of the angular deviation}
-	\label{fig:angular_dev_dists}
+	\includegraphics[width=150mm]{figures/RT_hist_box_23.png}
+	\caption[Distribution of reaction times]{distribution of the  reaction times in the pointing task}
+	\label{fig:rt_dists}
 \end{figure}
+
+
+\end{enumerate}
+
+
+
 \todo{
 	- linear mixed models parameters
 }
