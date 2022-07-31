@@ -108,7 +108,7 @@ After importing and converting the data into a pandas \autocite{reback2022pandas
 
 \subsection{Preprocessing}
 
-Different functions of pandas and Numpy {\emphasize (np)} \footnote{Python's Numpy library: \href{https://numpy.org/}{https://numpy.org/} - version 1.22.3} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. \\
+Different functions of pandas {\emphasize (pd)} and numpy {\emphasize (np)} \autocite{harris2020array} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. \\
 The main preprocessing steps are as follow:
 
 \begin{enumerate}
@@ -124,8 +124,8 @@ The main preprocessing steps are as follow:
 			\end{center}
 		The direction vector of participant's chosen direction doesn't need to be translated because unity's output for a direction is a normalized vector and therefore it's origin lies already at (0,0).\\
 		
-		\item Now that body position is at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction {\emphasize(Cdir)} to the positive x-axis and the translated building center position {\emphasize(Tpos\_t)} to the positive x-axis were calculated using Numpy's arctan2(z, x) \todo{ref} \footnote{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html\#r73eacd397847-1} function. This function calculates the angle in radian between the positive x-axis and the vector given to the function as parameter \todo{cite arctan2}. \\
-		Since due to the translation done in step \emph{a} the body position was implicitly translated to the origin (0,0), i.e., subtracting body position from body position results in (0,0), it was possible to pass the z and x coordinates of the {\emphasize Tpos\_t} and the {\emphasize Cdir} to the arctan2 function separately to calculate the angle between the {\emphasize Cdir} and the positive x-axis {\emphasize (Cdir\_to\_x)} and the {\emphasize Tpos\_t} and the positive x-axis {\emphasize (Tpos\_to\_x)}. The results are directly translated to degree utilizing Numpy's rad2deg() \todo{ref} \footnote{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html} function.
+		\item Now that body position is at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction {\emphasize(Cdir)} to the positive x-axis and the translated building center position {\emphasize(Tpos\_t)} to the positive x-axis were calculated using numpy arctan2(z, x) \footnote{Numpy arctan2: \href{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}} function. This function calculates the angle in radian between the positive x-axis and the vector given to the function as parameter. \\
+		Since due to the translation done in step \emph{a} the body position was implicitly translated to the origin (0,0), i.e., subtracting body position from body position results in (0,0), it was possible to pass the z and x coordinates of the {\emphasize Tpos\_t} and the {\emphasize Cdir} to the arctan2 function separately to calculate the angle between the {\emphasize Cdir} and the positive x-axis {\emphasize (Cdir\_to\_x)} and the {\emphasize Tpos\_t} and the positive x-axis {\emphasize (Tpos\_to\_x)}. The results are directly translated to degree utilizing numpy rad2deg() \footnote{Numpy rad2deg: \href{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}} function.
 		
 		\begin{center}
 			$Tpos\_to\_x_{\theta} = np.rad2deg(np.arctan2(Tpos\_t_{z}, Tpos\_t_{x}))$
@@ -143,10 +143,10 @@ The main preprocessing steps are as follow:
 
 \subsection{Visualization}
 
-The visualization is done utilizing Matplotlib \footnote{Python's Matplotlib library: \href{https://matplotlib.org}{https://matplotlib.org} - version 3.5.1} and Seaborn \footnote{Python's Seaborn library: \href{https://seaborn.pydata.org}{https://seaborn.pydata.org} - version 0.11.2} libraries.
+The visualization is done utilizing Matplotlib \autocite{Hunter:2007} and Seaborn \autocite{Waskom2021} libraries.
 
 \subsection{Analysis}
-Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the Statmodels \footnote{Python's Statmodels library: \href{https://www.statsmodels.org/stable/index.html}{https://www.statsmodels.org/stable/index.html} - version 0.13.2} library is used.
+Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the python's statmodels \autocite{seabold2010statsmodels} module is used.
 
 \todo{
 	- linear mixed models parameters
