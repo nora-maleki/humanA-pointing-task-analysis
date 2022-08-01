@@ -211,8 +211,9 @@ po/*~
 rsconnect/
 
 
-#### data folder of the project ####
+#### folders to ignore in the project ####
 data/
+supplementary_material/
 
 
 ################ TeX.gitignore ############
