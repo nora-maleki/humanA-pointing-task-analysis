@@ -44,17 +44,17 @@ After inserting participant-ID and choosing the preferred language the explorati
 
 Testing comprised of one session of approximately 2 hours. The testing starts after inputting the participant-ID and choosing the language. There is then a tutorial scene outside of the main city used in the experiment for participants to get acquainted with how to use the controller for performing the tasks. \\
 
-Testing was a pointing task comprised 336 trials performed from 28 different starting locations in the city. The distribution of the starting locations can be seen in figure \ref{fig:starting_locs}. At each starting location 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without human agents). Some examples are shown in figure \ref{fig:target_photos}. Each of the four conditions of the experiment, i.e., context meaningful with human agent present {\emphasize(CmA)}, context meaningful with no human agent present {\emphasize(CmANo)}, non-context meaningful with human agent present {\emphasize(Sa)}, non-context meaningful with no human agent present {\emphasize(SaNo)} built up 25\% of the trials.  The starting locations themselves were consistent for all participants and their order of execution was randomized for each participant. All movements except the rotation were blocked for the whole testing session to maintain the consistence of the participants' position in the starting locations between participants. \\
-
+Testing was a pointing task comprised 336 trials performed from 28 different starting locations in the city (see figure figure \ref{fig:starting_locs}). At each starting location 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without human agents) for each participant individually. Some examples are shown in figure \ref{fig:target_photos}. 
 
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=100mm]{figures/starting_locations.png}
+	\raggedright
+	\includegraphics[width=140mm]{figures/starting_locations_map_color.png}
 	\caption[Distribution of starting locations]{distribution of the starting locations in the city}
 	\label{fig:starting_locs}
 \end{figure}
 
-
+Each of the four conditions of the experiment, i.e., context meaningful with human agent present {\emphasize(CmA)}, context meaningful with no human agent present {\emphasize(CmANo)}, non-context meaningful with human agent present {\emphasize(Sa)}, non-context meaningful with no human agent present {\emphasize(SaNo)} built up 25\% of the trials.  The starting locations themselves were consistent for all participants and their order of execution was randomized for each participant. \\
+All movements except the rotation were blocked for the whole testing session to maintain the consistence of the participants' position in the starting locations between participants. 
 
 \begin{figure}[h!]
 	\centering
@@ -92,7 +92,52 @@ Testing was a pointing task comprised 336 trials performed from 28 different sta
 \end{figure}
 
 
-At each starting location the 12 consecutive trials were performed. Before the trial began a green circular loading bar {\emphasize (Go cue)} was shown in the middle of the screen for 25ms. As soon as the bar was complete, a beep sound was played informing the participants of the start of a new trial. In each trial a photo of one of the task buildings, with or without human agent in front of it (see figure \ref{fig:target_photos}), was presented at the top center of the screen \todo{(see figure X)}. The participants had the option to press the trigger button to bring the picture to the middle of the screen \todo{(see figure X)}. As soon as the button was released the photo moved back to the upper center part of the screen. Since there was no visual virtual body, there was a green dashed laser beam \todo{(see figure X)} attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen (see figure \ref{fig:timer}) and terminated the trial after 10 seconds if there was still no answer given. \\
+At each starting location the 12 consecutive trials were performed. Before the trial began a green circular loading bar {\emphasize (Go cue)} was shown in the middle of the screen for 25ms (see figure \ref{fig:go_cue}). As soon as the bar was complete, it disappeared and a beep sound was played informing the participants of the start of a new trial. 
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figures/go_cue_30.jpg}
+		\caption{go cue loaded at 30 \%}
+		\label{fig:go_cue_30}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figures/go_cue_80.jpg}
+		\caption{go cue loaded at 80 \%}
+		\label{fig:go_cue_80}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figures/go_cue_full.jpg}
+		\caption{go cue completely loaded}
+		\label{fig:go_cue_full}
+	\end{subfigure}
+	
+	\caption[Start of trial cue]{The circular loading bar with the duration of 25ms showed as a cue of the start of a new trial
+	}
+	\label{fig:go_cue}
+\end{figure}
+
+In each trial a photo of one of the task buildings, with or without human agent in front of it (see figure \ref{fig:target_photos}) was presented at the top center of the screen (see figure \ref{fig:photo_position_top}). The participants had the option to press the trigger button to bring the picture to the middle of the screen (see figure \ref{fig:photo_position_center}). As soon as the button was released the photo moved back to the upper center part of the screen.
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.48\linewidth}
+		\includegraphics[width=\linewidth]{figures/photo_position_top.jpg}
+		\caption{default position, top}
+		\label{fig:photo_position_top}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.48\linewidth}
+		\includegraphics[width=\linewidth]{figures/photo_position_center.jpg}
+		\caption{optional position, center}
+		\label{fig:photo_position_center}
+	\end{subfigure}
+	
+	\caption[Trial's target photo positions]{The default (a) and the optional positioning (b) of target photos in each trial. The dashed green laser beam helped the participants to see where they are pointing at
+	}
+	\label{fig:photo_positions}
+\end{figure}
+
+Since there was no visual virtual body, there was a green dashed laser beam (visible in figures \ref{fig:photo_position_center}) attached to the virtual hand of the participants that moved as they moved their hand. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen (see figure \ref{fig:timer}) and terminated the trial after 10 seconds if there was still no answer given. \\
 
 \begin{figure}[h]
 	\centering
