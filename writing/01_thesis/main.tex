@@ -175,11 +175,11 @@
 \usepackage{dcolumn}
 \usepackage{arydshln}
 
-\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
-\newcolumntype{^}{>{\currentrowstyle}}
-\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
-	#1\ignorespaces
-}
+\usepackage{tabularx}
+\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
+\newcommand\clearrow{\global\let\rowmac\relax}
+\clearrow
+
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
 

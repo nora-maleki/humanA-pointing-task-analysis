@@ -70,7 +70,7 @@ Furthermore, the starting location with the ID 35, one of the residential, thus 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=100mm]{figures/best_worst_starting_locations.png}
+	\includegraphics[width=140mm]{figures/best_worst_starting_locations_map.png}
 	\caption[Locations of best and worst starting locations in city]{the locations of the best and worst starting locations inside the city coordinates.}
 	\label{fig:best_worst_locs}
 \end{figure}
@@ -119,7 +119,7 @@ Furthermore, the starting location 35, the residential not context meaningful lo
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=100mm]{figures/fastest_slowest_starting_locations_RT.png}
+	\includegraphics[width=140mm]{figures/fastest_slowest_starting_locations_RT_map.png}
 	\caption[Locations of fastest and slowest starting locations in city]{the locations of the fastest and the slowest starting locations inside the city coordinates.}
 	\label{fig:fastest_slowest_locs}
 \end{figure}
@@ -128,9 +128,9 @@ Furthermore, the starting location 35, the residential not context meaningful lo
 
 \subsection{Absolute angular deviation}
 
-\todo{add reference selection}
+For choosing the intercept for the model the overall mean of absolute angular deviation, 48.09 degree, was taken into account. The starting location No. 20 (fast food) which is a meaningful location with the mean absolute angular deviation 48.07 was chosen since its mean absolute angular deviation was the closest to the overall mean among starting locations by 0.02 degree absolute difference.
 
-The result of the LMM analysis for predicting absolute angular deviation as a function of starting locations shows a 
+The LMM model was fitted using that reference location No. 20. The results (see table \ref{tab:angle_loc}) show a significant effect of 12 starting locations listed in the table \ref{tab:sig_angle_loc} on the dependent variable. From the 12 locations with a significant effect, 7 are meaningful locations and from the 15 non-significant locations, 6 are meaningful (see figure \ref{fig:sig_angle_loc_map}). The variance between subjects is 174.867. 
 
 \begingroup % localize the following settings                                                                    
 \setlength\tabcolsep{3pt}
@@ -142,13 +142,14 @@ The result of the LMM analysis for predicting absolute angular deviation as a fu
 \setlength\LTright{15pt}           % default: \fill                                                                                                    
 
 \begin{longtable}{@{\extracolsep{\fill}}p{2.8cm}clrrrr@{}}
-	%{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
+	
+	\caption[Absolute angular deviation by starting locations]{The results of the model absolute angular deviation by starting locations} \\
 	\multicolumn{2}{c}{} & {} & \multicolumn{2}{c}{} & \multicolumn{2}{c}{} \\
 	\hline \hline
-	Model: 			   & {}& MixedLM & {} & Dependent Variable: & absolute\_180\_angles \\
-	No. Observations:  & {}& 7708    & {} & Method:		 	   & REML \\
+	Model: 			  & {} & MixedLM & {} & Dependent Variable: & absolute\_180\_angles \\
+	No. Observations: & {} & 7708    & {} & Method:		 	   & REML \\
 	No. Groups: 	  & {} & 23      & {} & Scale: 		  	   & 1713.9889 \\          
-	Min. group size:  & {} & 329     & {} & Log-Likelihood: 	   & -39610.1276 \\
+	Min. group size:  & {} & 329     & {} & Log-Likelihood:    & -39610.1276 \\
 	Max. group size:  & {} & 336     & {} & Converged:	 	   & Yes \\
 	Mean group size:  & {} & 335.1   & {} & {} 			  	   & {} \\
 	\hline        
@@ -156,114 +157,187 @@ The result of the LMM analysis for predicting absolute angular deviation as a fu
 	\multicolumn{1}{l}{} & \multicolumn{1}{l}{Coef.} & \multicolumn{1}{l}{Std.Err.} & \multicolumn{1}{c}{z} & \multicolumn{1}{r}{P$>|z|$} & \multicolumn{1}{r}{[0.025} & \multicolumn{1}{l}{0.975]} \\
 	\hline
 	
-	Intercept  & 46.993  & 3.720 & 12.634 & 0.000 & 39.702  & 54.283  \\
-	{[}Loc.1{]}  & -0.262  & 3.527 & -0.074 & 0.941 & -7.175  & 6.652   \\
-	\rowstyle{\bfseries} {[}Loc.2{]}  &
-	\rowstyle{\bfseries} -13.467 & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} -3.818 & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} -20.381 & 
-	\rowstyle{\bfseries} -6.553  \\
-	{[}Loc.4{]}  & -1.196  & 3.527 & -0.339 & 0.735 & -8.110  & 5.718   \\
-	\rowstyle{\bfseries} {[}Loc.5{]}  & 
-	\rowstyle{\bfseries} 15.782  & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} 4.474  & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} 8.869   & 
-	\rowstyle{\bfseries} 22.696  \\
-	\rowstyle{\bfseries} {[}Loc.7{]}  & 
-	\rowstyle{\bfseries} -8.236  & 
-	\rowstyle{\bfseries} 3.534 & 
-	\rowstyle{\bfseries} -2.331 & 
-	\rowstyle{\bfseries} 0.020 & 
-	\rowstyle{\bfseries} -15.163 & 
-	\rowstyle{\bfseries} -1.310  \\
-	\rowstyle{\bfseries} {[}Loc.9{]}  & 
-	\rowstyle{\bfseries} -19.490 & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} -5.525 & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} -26.404 & 
-	\rowstyle{\bfseries} -12.576 \\
-	{[}Loc.14{]} & -5.622  & 3.527 & -1.594 & 0.111 & -12.536 & 1.292   \\
-	{[}Loc.18{]} & 5.006   & 3.534 & 1.416  & 0.157 & -1.921  & 11.932  \\
-	{[}Loc.19{]} & -3.967  & 3.527 & -1.125 & 0.261 & -10.881 & 2.947   \\
-	{[}Loc.20{]} & 1.073   & 3.527 & 0.304  & 0.761 & -5.840  & 7.987   \\
-	{[}Loc.21{]} & -1.758  & 3.534 & -0.498 & 0.619 & -8.685  & 5.168   \\
-	\rowstyle{\bfseries} {[}Loc.25{]} & 
-	\rowstyle{\bfseries} -7.782  & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} -2.206 & 
-	\rowstyle{\bfseries} 0.027 & 
-	\rowstyle{\bfseries} -14.696 & 
-	\rowstyle{\bfseries} -0.868  \\
-	\rowstyle{\bfseries} {[}Loc.29{]} & 
-	\rowstyle{\bfseries} 9.860   & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} 2.795  & 
-	\rowstyle{\bfseries} 0.005 & 
-	\rowstyle{\bfseries} 2.946   & 
-	\rowstyle{\bfseries} 16.774  \\
-	\rowstyle{\bfseries} 
-	\rowstyle{\bfseries} {[}Loc.30{]} & 
-	\rowstyle{\bfseries} 12.660  & 
-	\rowstyle{\bfseries} 3.531 & 
-	\rowstyle{\bfseries} 3.586  & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} 5.740   & 
-	\rowstyle{\bfseries} 19.580  \\
-	\rowstyle{\bfseries} {[}Loc.35{]} & 
-	\rowstyle{\bfseries} 18.406  & 
-	\rowstyle{\bfseries} 3.540 & 
-	\rowstyle{\bfseries} 5.199  & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} 11.467  & 
-	\rowstyle{\bfseries} 25.345  \\
-	{[}Loc.36{]} & 1.992   & 3.527 & 0.565  & 0.572 & -4.922  & 8.905   \\
-	{[}Loc.37{]} & 0.124   & 3.527 & 0.035  & 0.972 & -6.790  & 7.038   \\
-	\rowstyle{\bfseries} {[}Loc.38{]} & 
-	\rowstyle{\bfseries} -7.768  & 
-	\rowstyle{\bfseries} 3.527 & 
-	\rowstyle{\bfseries} -2.202 & 
-	\rowstyle{\bfseries} 0.028 & 
-	\rowstyle{\bfseries} -14.681 & 
-	\rowstyle{\bfseries} -0.854  \\
-	{[}Loc.40{]} & 4.199   & 3.527 & 1.190  & 0.234 & -2.714  & 11.113  \\
-	{[}Loc.43{]} & 4.955   & 3.527 & 1.405  & 0.160 & -1.959  & 11.869  \\
-	{[}Loc.44{]} & -1.265  & 3.527 & -0.359 & 0.720 & -8.178  & 5.649   \\
-	{[}Loc.45{]} & -1.682  & 3.531 & -0.476 & 0.634 & -8.602  & 5.238   \\
-	{[}Loc.51{]} & 1.438   & 3.527 & 0.408  & 0.683 & -5.475  & 8.352   \\
-	\rowstyle{\bfseries} {[}Loc.52{]} & 
-	\rowstyle{\bfseries} 13.990  & 
-	\rowstyle{\bfseries} 3.534 & 
-	\rowstyle{\bfseries} 3.959  & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} 7.063   & 
-	\rowstyle{\bfseries} 20.916  \\
-	\rowstyle{\bfseries} {[}Loc.54{]} & 
-	\rowstyle{\bfseries} -11.301 & 
-	\rowstyle{\bfseries} 3.537 & 
-	\rowstyle{\bfseries} -3.195 & 
-	\rowstyle{\bfseries} 0.001 & 
-	\rowstyle{\bfseries} -18.234 & 
-	\rowstyle{\bfseries} -4.368  \\
-	{[}Loc.55{]} & 5.326   & 3.531 & 1.509  & 0.131 & -1.594  & 12.246  \\
-	\rowstyle{\bfseries} {[}Loc.58{]} & 
-	\rowstyle{\bfseries} 19.880  & 
-	\rowstyle{\bfseries} 3.531 & 
-	\rowstyle{\bfseries} 5.631  & 
-	\rowstyle{\bfseries} 0.000 & 
-	\rowstyle{\bfseries} 12.960  & 
-	\rowstyle{\bfseries} 26.800 \\
+	Intercept    & 48.066  & 3.717 & 12.933 & 0.000 & 40.781  & 55.350  \\
+	{[}Loc.1{]}  & -1.335  & 3.524 & -0.379 & 0.705 & -8.242  & 5.573   \\
+	\setrow{\bfseries} {[}Loc.2{]}  & \setrow{\bfseries} -14.540 & \setrow{\bfseries} 3.524 & \setrow{\bfseries} -4.126 & \setrow{\bfseries} 0.000 & \setrow{\bfseries} -21.447 & \setrow{\bfseries} -7.633  \\
+	{[}Loc.4{]}  & -2.269  & 3.524 & -0.644 & 0.520 & -9.176  & 4.638   \\
+	\setrow{\bfseries} {[}Loc.5{]}  & \setrow{\bfseries} 14.709  & \setrow{\bfseries} 3.524 & \setrow{\bfseries} 4.174  & \setrow{\bfseries} 0.000 & \setrow{\bfseries} 7.802   & \setrow{\bfseries} 21.616  \\
+	 \setrow{\bfseries}{[}Loc.7{]}  & \setrow{\bfseries} -9.310  & \setrow{\bfseries} 3.531 & \setrow{\bfseries} -2.637 & \setrow{\bfseries} 0.008 & \setrow{\bfseries} -16.230 & \setrow{\bfseries} -2.390  \\
+	 \setrow{\bfseries}{[}Loc.9{]}  & \setrow{\bfseries} -20.563 & \setrow{\bfseries} 3.524 & \setrow{\bfseries} -5.835 & \setrow{\bfseries} 0.000 & \setrow{\bfseries} -27.470 & \setrow{\bfseries} -13.656 \\
+	{[}Loc.14{]} & -6.695  & 3.524 & -1.900 & 0.057 & -13.603 & 0.212   \\
+	{[}Loc.18{]} & 3.932   & 3.531 & 1.114  & 0.265 & -2.988  & 10.852  \\
+	{[}Loc.19{]} & -5.040  & 3.524 & -1.430 & 0.153 & -11.948 & 1.867   \\
+	{[}Loc.21{]} & -2.832  & 3.531 & -0.802 & 0.423 & -9.752  & 4.088   \\
+	 \setrow{\bfseries}{[}Loc.25{]} & \setrow{\bfseries} -8.855  & \setrow{\bfseries} 3.524 & \setrow{\bfseries} -2.513 & \setrow{\bfseries} 0.012 & \setrow{\bfseries} -15.763 & \setrow{\bfseries} -1.948  \\
+	 \setrow{\bfseries}{[}Loc.29{]} & \setrow{\bfseries} 8.787   & \setrow{\bfseries} 3.524 & \setrow{\bfseries} 2.493  & \setrow{\bfseries} 0.013 & \setrow{\bfseries} 1.879   & \setrow{\bfseries} 15.694  \\
+	 \setrow{\bfseries}{[}Loc.30{]} & \setrow{\bfseries} 11.587  & \setrow{\bfseries} 3.527 & \setrow{\bfseries} 3.285  & \setrow{\bfseries} 0.001 & \setrow{\bfseries} 4.674   & \setrow{\bfseries} 18.501  \\
+	{[}Loc.34{]} & -1.073  & 3.527 & -0.304 & 0.761 & -7.987  & 5.840   \\
+	 \setrow{\bfseries}{[}Loc.35{]} & \setrow{\bfseries} 17.333  & \setrow{\bfseries} 3.537 & \setrow{\bfseries} 4.900  & \setrow{\bfseries} 0.000 & \setrow{\bfseries} 10.400  & \setrow{\bfseries} 24.265  \\
+	{[}Loc.36{]} & 0.918   & 3.524 & 0.261  & 0.794 & -5.989  & 7.826   \\
+	{[}Loc.37{]} & -0.949  & 3.524 & -0.269 & 0.788 & -7.857  & 5.958   \\
+	 \setrow{\bfseries}{[}Loc.38{]} & \setrow{\bfseries} -8.841  & \setrow{\bfseries} 3.524 & \setrow{\bfseries} -2.509 & \setrow{\bfseries} 0.012 & \setrow{\bfseries} -15.748 & \setrow{\bfseries} -1.934  \\
+	{[}Loc.40{]} & 3.126   & 3.524 & 0.887  & 0.375 & -3.781  & 10.033  \\
+	{[}Loc.43{]} & 3.882   & 3.524 & 1.101  & 0.271 & -3.026  & 10.789  \\
+	{[}Loc.44{]} & -2.338  & 3.524 & -0.663 & 0.507 & -9.245  & 4.570   \\
+	{[}Loc.45{]} & -2.755  & 3.527 & -0.781 & 0.435 & -9.669  & 4.158   \\
+	{[}Loc.51{]} & 0.365   & 3.524 & 0.104  & 0.917 & -6.542  & 7.272   \\
+	 \setrow{\bfseries}{[}Loc.52{]} & \setrow{\bfseries} 12.917  & \setrow{\bfseries} 3.531 & \setrow{\bfseries} 3.658  & \setrow{\bfseries} 0.000 & \setrow{\bfseries} 5.997   & \setrow{\bfseries} 19.837  \\
+	 \setrow{\bfseries}{[}Loc.54{]} & \setrow{\bfseries} -12.374 & \setrow{\bfseries} 3.534 & \setrow{\bfseries} -3.502 & \setrow{\bfseries} 0.000 & \setrow{\bfseries} -19.301 & \setrow{\bfseries} -5.448  \\
+	{[}Loc.55{]} & 4.253   & 3.527 & 1.206  & 0.228 & -2.660  & 11.167  \\
+	 \setrow{\bfseries}{[}Loc.58{]} & \setrow{\bfseries} 18.807  & \setrow{\bfseries} 3.527 & \setrow{\bfseries} 5.332  & \setrow{\bfseries} 0.000 & \setrow{\bfseries} 11.893  & \setrow{\bfseries} 25.721  \\
+	 subject\_id Var & 174.867 & 1.311 & {} & {} & {} & {} \\
 	\hline
+	
+	\label{tab:angle_loc}
 \end{longtable}
 \endgroup
 
+\begin{table}[h]
+	\begin{center}
+		\caption[Significant locations in absolute angular deviation predicted by starting location]{Significant locations in absolute angular deviation predicted by starting location} \vspace{10pt}
+		\begin{tabular}{l l r r} 
+			\hline 
+			{} & \setrow{\bfseries} Location ID-name & \setrow{\bfseries} mean & \setrow{\bfseries} meaningfulness \\ [.7ex] 
+			\hline\hline
+			1 & 2 (boulangerie)		& 		33.53 		& meaningful	  \\ 
+			\hline
+			2 & 5 (Maraz cafe)		& 		62.77	 	& meaningful 	  \\
+			\hline
+			3 & 7 (bear) 			& 		38.73		& non-meaningful  \\
+			\hline
+			4 & 9 (patisserie) 		& 		27.50 		& meaningful	  \\
+			\hline
+			5 & 25 (alligator) 		& 		39.21 		& non-meaningful  \\ 
+			\hline
+			6 & 29 (restaurant)		& 		56.85 		& meaningful  \\ 
+			\hline
+			7 & 30 (purpul bat)		& 		59.63 		& non-meaningful  \\ 
+			\hline
+			8 & 35 (underwater)		& 		65.28 		& non-meaningful  \\
+			\hline
+			9 & 38 (bike shop)		& 		39.22 		& meaningful  \\
+			\hline
+			10 & 52 (la cantine)		& 		60.93 		& meaningful  \\
+			\hline
+			11 & 54 (tree)			& 		35.77 		& non-meaningful  \\
+			\hline
+			12 & 58 (basketball court)		& 		66.85 		& meaningful  \\ 		[1ex]
+			\hline
+		\end{tabular}
+		\label{tab:sig_angle_loc}
+	\end{center}
+\end{table}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=150mm]{figures/significance_starting_locations_angular_error_map_23.png}
+	\caption[Significance and meaningfulness (absolute angular deviation predicted by starting location)]{Significance and meaningfulness of LMM results of absolute angular deviation predicted by starting location}
+	\label{fig:sig_angle_loc_map}
+\end{figure}
 
+In comparison to the starting location No. 20 (the reference point), the starting location No. 58 has the least difference in angular error degree to the reference and the starting location No. 9 the most.
 
 \subsection{Reaction times}
 
-\section{Exploration}
+The starting location No. 7 (bear) which is a non-meaningful location was chosen as the intercept for the model Rt predicted by starting locations. This decision was made based on the comparison of medians of RT from each starting location to the overall median of 6.01s. Here the median was considered as the measure of central tendency because the medians were more normally distributed than means. The location No. 7 had median of 6.02s and the difference of 0.01s from the overall median. However, the starting location No. 29 (restaurant) had also the same difference from the overall median. Hence their mean difference to the overall mean of RT was also secondarily taken into account for the final choice. Location No. 7 had the smaller difference of 0.03s compared to the location No. 29 with the difference to mean of 0.55s. 
+
+The LMM model was fitted using that reference location No. 7. The results (see table \ref{tab:RT_loc}) show a significant effect of 7 starting locations (listed in the table \ref{tab:sig_RT_loc}) on the dependent variable. From the 7 locations with a significant effect, 2 are meaningful locations and from the 20 non-significant locations, 12 are meaningful (see figure \ref{fig:sig_RT_loc_map}). The subject variance of the reaction times is 3.762.
+
+
+\begingroup % localize the following settings                                                                    
+\setlength\tabcolsep{3pt}
+\footnotesize
+
+\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)      
+
+\setlength\LTleft{5pt}            % default: \fill
+\setlength\LTright{15pt}           % default: \fill                                                                                                    
+
+\begin{longtable}{@{\extracolsep{\fill}}p{2.8cm}clrrrr@{}}
+	
+	\caption[RT predicted by starting locations]{The results of the model RT predicted by starting locations} \\
+	\multicolumn{2}{c}{} & {} & \multicolumn{2}{c}{} & \multicolumn{2}{c}{} \\
+	\hline \hline
+	Model: 			  & {} & MixedLM & {} & Dependent Variable: & RT \\
+	No. Observations: & {} & 7708    & {} & Method:		 	   & REML \\
+	No. Groups: 	  & {} & 23      & {} & Scale: 		  	   & 26.9503 \\          
+	Min. group size:  & {} & 329     & {} & Log-Likelihood:    & -23667.5718 \\
+	Max. group size:  & {} & 336     & {} & Converged:	 	   & Yes \\
+	Mean group size:  & {} & 335.1   & {} & {} 			  	   & {} \\
+	\hline        
+	
+	\multicolumn{1}{l}{} & \multicolumn{1}{l}{Coef.} & \multicolumn{1}{l}{Std.Err.} & \multicolumn{1}{c}{z} & \multicolumn{1}{r}{P$>|z|$} & \multicolumn{1}{r}{[0.025} & \multicolumn{1}{l}{0.975]} \\
+	\hline
+	
+	Intercept       & 7.736  & 0.512 & 15.116 & 0.000 & 6.733  & 8.739  \\
+	{[}Loc.1{]}     & -0.335 & 0.443 & -0.757 & 0.449 & -1.203 & 0.533  \\
+	{[}Loc.2{]}     & -0.676 & 0.443 & -1.526 & 0.127 & -1.543 & 0.192  \\
+	 \setrow{\bfseries} {[}Loc.4{]}     & \setrow{\bfseries}  -1.047 & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  -2.365 & \setrow{\bfseries}  0.018 & \setrow{\bfseries}  -1.915 & \setrow{\bfseries}  -0.179 \\
+	{[}Loc.5{]}     & 0.821  & 0.443 & 1.854  & 0.064 & -0.047 & 1.689  \\
+	{[}Loc.9{]}     & -0.287 & 0.443 & -0.649 & 0.516 & -1.155 & 0.580  \\
+	{[}Loc.14{]}    & 0.542  & 0.443 & 1.224  & 0.221 & -0.326 & 1.409  \\
+	{[}Loc.18{]}    & 0.863  & 0.444 & 1.946  & 0.052 & -0.006 & 1.732  \\
+	 \setrow{\bfseries} {[}Loc.19{]}    & \setrow{\bfseries}  -1.220 & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  -2.755 & \setrow{\bfseries}  0.006 & \setrow{\bfseries}  -2.088 & \setrow{\bfseries}  -0.352 \\
+	 \setrow{\bfseries} {[}Loc.20{]}    & \setrow{\bfseries}  -1.078 & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  -2.435 & \setrow{\bfseries}  0.015 & \setrow{\bfseries}  -1.946 & \setrow{\bfseries}  -0.210 \\
+	{[}Loc.21{]}    & -0.314 & 0.444 & -0.708 & 0.479 & -1.183 & 0.555  \\
+	{[}Loc.25{]}    & -0.434 & 0.443 & -0.979 & 0.327 & -1.301 & 0.434  \\
+	{[}Loc.29{]}    & -0.516 & 0.443 & -1.165 & 0.244 & -1.383 & 0.352  \\
+	{[}Loc.30{]}    & 0.733  & 0.443 & 1.654  & 0.098 & -0.136 & 1.601  \\
+	{[}Loc.34{]}    & 0.446  & 0.443 & 1.006  & 0.315 & -0.423 & 1.314  \\
+	 \setrow{\bfseries} {[}Loc.35{]}    & \setrow{\bfseries}  1.323  & \setrow{\bfseries}  0.444 & \setrow{\bfseries}  2.978  & \setrow{\bfseries}  0.003 & \setrow{\bfseries}  0.452  & \setrow{\bfseries}  2.194  \\
+	{[}Loc.36{]}    & -0.207 & 0.443 & -0.468 & 0.640 & -1.075 & 0.660  \\
+	 \setrow{\bfseries} {[}Loc.37{]}    & \setrow{\bfseries}  0.945  & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  2.134  & \setrow{\bfseries}  0.033 & \setrow{\bfseries}  0.077  & \setrow{\bfseries}  1.812  \\
+	{[}Loc.38{]}    & -0.128 & 0.443 & -0.290 & 0.772 & -0.996 & 0.739  \\
+	{[}Loc.40{]}    & 0.780  & 0.443 & 1.762  & 0.078 & -0.088 & 1.648  \\
+	 \setrow{\bfseries} {[}Loc.43{]}    & \setrow{\bfseries}  0.929  & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  2.098  & \setrow{\bfseries}  0.036 & \setrow{\bfseries}  0.061  & \setrow{\bfseries}  1.796  \\
+	{[}Loc.44{]}    & -0.312 & 0.443 & -0.704 & 0.482 & -1.179 & 0.556  \\
+	{[}Loc.45{]}    & 0.470  & 0.443 & 1.060  & 0.289 & -0.399 & 1.338  \\
+	 \setrow{\bfseries} {[}Loc.51{]}    & \setrow{\bfseries} -1.042 & \setrow{\bfseries}  0.443 & \setrow{\bfseries}  -2.353 & \setrow{\bfseries}  0.019  &\setrow{\bfseries} -1.909  &\setrow{\bfseries} -0.174 \\
+	{[}Loc.52{]}    & 0.340  & 0.444 & 0.766  & 0.444 & -0.530 & 1.209  \\
+	{[}Loc.54{]}    & 0.438  & 0.444 & 0.987  & 0.323 & -0.432 & 1.308  \\
+	{[}Loc.55{]}    & 0.128  & 0.443 & 0.289  & 0.772 & -0.740 & 0.997  \\
+	{[}Loc.58{]}    & -0.290 & 0.443 & -0.655 & 0.512 & -1.159 & 0.578  \\
+	subject\_id Var & 3.762  & 0.223 &  {}    &  {}   &  {}    &   {}   \\
+	\hline
+	
+	\label{tab:RT_loc}
+\end{longtable}
+\endgroup
+
+\begin{table}[h]
+	\begin{center}
+		\caption[Significant locations in RT predicted by starting location]{Significant locations in RT predicted by starting location} \vspace{10pt}
+		\begin{tabular}{l l l r r} 
+			\hline 
+			{} & \setrow{\bfseries} Location ID-name & \setrow{\bfseries} mean & \setrow{\bfseries} median & \setrow{\bfseries} meaningfulness \\ [.7ex] 
+			\hline\hline
+			1 & 4 (gorilla)		& 		6.69 &  	5.62	& non-meaningful	  \\ 
+			\hline
+			2 & 19 (bottle spray)		& 		6.52 & 5.28	 	& non-meaningful 	  \\
+			\hline
+			3 & 20 (fast food) 			& 6.66 &	5.80	& meaningful  \\
+			\hline
+			4 & 35 (underwater) 	& 		9.08 & 7.75		& non-meaningful	  \\
+			\hline
+			5 & 37 (house) 		& 		8.68 & 6.69 		& non-meaningful  \\ 
+			\hline
+			6 & 43 (daisy)		& 		8.66 	& 6.89	& non-meaningful  \\ 
+			\hline
+			7 & 51 (wine shop)		& 		6.69 & 4.63 & meaningful  \\ 
+			[1ex]
+			\hline
+		\end{tabular}
+		\label{tab:sig_RT_loc}
+	\end{center}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=150mm]{figures/significance_starting_locations_RT_map_23.png}
+	\caption[Significance and meaningfulness (RT predicted by starting location)]{Significance and meaningfulness of LMM results of RT predicted by starting location}
+	\label{fig:sig_RT_loc_map}
+\end{figure}
+
+In comparison to the starting location No. 7 (the reference point), the starting location No. 35 has the least difference in RT to the reference and the starting location No. 19 the most.
+
+\section{Exploratory descriptive and analysis}
