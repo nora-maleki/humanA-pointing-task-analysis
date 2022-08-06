@@ -170,7 +170,17 @@
 \usepackage[toc,page]{appendix}
 \geometry{a4paper, portrait, tmargin=1.5in, bmargin=1.5in, outer=1.5in}
 
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{dcolumn}
+\usepackage{arydshln}
 
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+	#1\ignorespaces
+}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
 
 %% ========================================================================
@@ -209,6 +219,7 @@
 %% ========================================================================
 \begin{document}
 
+\renewcommand{\arraystretch}{1.5}
 \rmfamily
 \frontmatter                    %% KOMA: roman page numbers and such; only available in scrbook
 

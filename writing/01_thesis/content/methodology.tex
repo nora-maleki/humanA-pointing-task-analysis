@@ -249,13 +249,13 @@ Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were ch
 	\begin{enumerate}
 		\item
 		\begin{align*}
-			absolute \; angular \; error \sim starting \; locations
+			absolute \; angular \; error \sim starting \; locations + (1 | subject)
 		\end{align*}
 	
 		\item 
 		\begin{align*}
 			absolute \; angular \; error \sim &starting \; locations + distance \; to \; target \\
-			+ &starting \; locations \; : \; distance \; to \; target
+			+ &starting \; locations \; * \; distance \; to \; target + (1 | subject)
 		\end{align*}
 	\end{enumerate}
 	
@@ -272,13 +272,13 @@ Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were ch
 	 \begin{enumerate}
 	 	\item
 	 	\begin{align*}
-	 		reaction \; times \sim starting \; locations
+	 		reaction \; times \sim starting \; locations + (1 | subject)
 	 	\end{align*}
 	 	
 	 	\item 
 	 	\begin{align*}
 	 		reaction \; times \sim &starting \; locations + distance \; to \; target \\
-	 		+ &starting \; locations \; : \; distance \; to \; target
+	 		+ &starting \; locations \; * \; distance \; to \; target + (1 | subject)
 	 	\end{align*}
 	 \end{enumerate}
  
