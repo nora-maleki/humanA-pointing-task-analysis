@@ -31,7 +31,7 @@ This variable has the mean of 7.77 with the standard deviation of 5.56, and medi
 \subsection{Absolute angular deviation}
 
 In order to find out which of the 28 starting locations were the best and worst in performance with respect to the angular deviation from the target, the minimum and maximum medians of angular deviation grouped by the starting locations were taken.\\
-As a result the starting location with the ID 9 which is a "patisserie" shop, therefore a context meaningful location, with the median of 19.18 degree deviation from the targets and the difference of 16.03 degree from the overall median (35.21) is the best location, i.e., has the lowest degree deviation from the target. See figure \ref{fig:best_angular}.\\
+As a result the starting location with the ID 9 which is a patisserie shop, therefore a context meaningful location, with the median of 19.18 degree deviation from the targets and the difference of 16.03 degree from the overall median (35.21) is the best location, i.e., has the lowest degree deviation from the target. See figure \ref{fig:best_angular}.\\
 
 \begin{figure}[h!]
 	\centering
@@ -42,7 +42,7 @@ As a result the starting location with the ID 9 which is a "patisserie" shop, th
 	\end{subfigure}
 	\begin{subfigure}[b]{0.48\linewidth}
 		\includegraphics[width=\linewidth]{figures/deviation_degrees_loc_nr_9_23.png}
-		\caption{angular deviation in location 9 (\%)}
+		\caption{angular deviation at location 9 (\%)}
 		\label{fig:best_angular_dist_9}
 	\end{subfigure}
 	
@@ -50,7 +50,7 @@ As a result the starting location with the ID 9 which is a "patisserie" shop, th
 \end{figure}
 \label{fig:best_location}
 
-Furthermore, the starting location with the ID 35, one of the residential, thus not context meaningful, buildings with the angular deviation median of 52.49 degree away from the target and overall distance of 17.28 degree from the overall median (35.21) was the worst location of performing the task with regard to the angular deviation. See figure \ref{fig:worst_angular}.
+Furthermore, the starting location with the ID 35, one of the residential, thus not context meaningful buildings, with the angular deviation median of 52.49 degree away from the target and overall distance of 17.28 degree from the overall median (35.21) was the worst location of performing the task with regard to the angular deviation. See figure \ref{fig:worst_angular}.
 
 \begin{figure}[!h]
 	\begin{subfigure}[b]{0.48\linewidth}
@@ -60,7 +60,7 @@ Furthermore, the starting location with the ID 35, one of the residential, thus 
 	\end{subfigure}
 	\begin{subfigure}[b]{0.48\linewidth}
 		\includegraphics[width=\linewidth]{figures/deviation_degrees_loc_nr_35_23.png}
-		\caption{angular deviation in location 35 (\%)}
+		\caption{angular deviation at location 35 (\%)}
 		\label{fig:worst_angular_dist_35}
 	\end{subfigure}
 
@@ -235,11 +235,11 @@ The LMM model was fitted using that reference location No. 20. The results (see 
 	\label{fig:sig_angle_loc_map}
 \end{figure}
 
-In comparison to the starting location No. 20 (the reference point), the starting location No. 58 has the least difference in angular error degree to the reference and the starting location No. 9 the most.
+In comparison to the starting location No. 20 (fast food restaurant) ,the reference point, the starting location No. 51 (wine shop) has the least difference in angular error degree to the reference and the starting location No. 9 (patisserie) the most. All three locations are meaningful locations.
 
 \subsection{Reaction times}
 
-The starting location No. 7 (bear) which is a non-meaningful location was chosen as the intercept for the model Rt predicted by starting locations. This decision was made based on the comparison of medians of RT from each starting location to the overall median of 6.01s. Here the median was considered as the measure of central tendency because the medians were more normally distributed than means. The location No. 7 had median of 6.02s and the difference of 0.01s from the overall median. However, the starting location No. 29 (restaurant) had also the same difference from the overall median. Hence their mean difference to the overall mean of RT was also secondarily taken into account for the final choice. Location No. 7 had the smaller difference of 0.03s compared to the location No. 29 with the difference to mean of 0.55s. 
+The starting location No. 7 (bear) which is a non-meaningful location was chosen as the intercept for the model RT predicted by starting locations. This decision was made based on the comparison of medians of RT from each starting location to the overall median of 6.01s. Here the median was considered as the measure of central tendency because the medians were more normally distributed than means. The location No. 7 had median of 6.02s and the difference of 0.01s from the overall median. However, the starting location No. 29 (restaurant) had also the same difference from the overall median. Hence their mean difference to the overall mean of RT was also secondarily taken into account for the final choice. Location No. 7 had the smaller difference of 0.03s compared to the location No. 29 with the difference to mean of 0.55s. 
 
 The LMM model was fitted using that reference location No. 7. The results (see table \ref{tab:RT_loc}) show a significant effect of 7 starting locations (listed in the table \ref{tab:sig_RT_loc}) on the dependent variable. From the 7 locations with a significant effect, 2 are meaningful locations and from the 20 non-significant locations, 12 are meaningful (see figure \ref{fig:sig_RT_loc_map}). The subject variance of the reaction times is 3.762.
 
@@ -338,6 +338,6 @@ The LMM model was fitted using that reference location No. 7. The results (see t
 	\label{fig:sig_RT_loc_map}
 \end{figure}
 
-In comparison to the starting location No. 7 (the reference point), the starting location No. 35 has the least difference in RT to the reference and the starting location No. 19 the most.
+In comparison to the starting location No. 7 (the reference point), the starting location No. 55 has the least difference in RT to the reference and the starting location No. 35 the most. All three locations are residential buildings.
 
 \section{Exploratory descriptive and analysis}
