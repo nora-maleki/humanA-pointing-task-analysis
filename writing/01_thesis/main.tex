@@ -180,6 +180,14 @@
 \newcommand\clearrow{\global\let\rowmac\relax}
 \clearrow
 
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
 
