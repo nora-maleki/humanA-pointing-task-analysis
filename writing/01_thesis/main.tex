@@ -182,11 +182,10 @@
 
 \usepackage{afterpage}
 
-\newcommand\blankpage{%
-	\null
-	\thispagestyle{empty}%
-	\addtocounter{page}{-1}%
-	\newpage}
+%\usepackage{color, colortbl}
+%\definecolor{name}{system}{definition}
+%\definecolor{Gray}{gray}{0.9}
+%\definecolor{LightCyan}{rgb}{0.88,1,1}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
@@ -234,7 +233,6 @@
 \input{\mytitlepage}
 
 \input{template/declaration_UOS}
-
 
 %% include the abstract without chapter number but include it on table of contents:
 \cleardoublepage
