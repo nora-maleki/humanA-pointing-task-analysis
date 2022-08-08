@@ -134,8 +134,15 @@ Furthermore, the starting location 35, the residential not context meaningful lo
 
 For choosing the intercept for the model the overall mean of absolute angular deviation, 48.09 degrees, was taken into account. The starting location No. 20 (fast food) which was a meaningful location with a mean absolute angular deviation of 48.07 degrees was chosen since its mean absolute angular deviation was the closest to the overall mean among starting locations by 0.02 degrees absolute difference.
 
-The LMM model was fitted using that reference location, No. 20. The results (see table \ref{tab:angle_loc}) show a significant effect of 12 starting locations listed in the table \ref{tab:sig_angle_loc} on the dependent variable. From the 12 locations with a significant effect, 7 were meaningful locations and from the 15 non-significant locations, 6 were meaningful (see figure \ref{fig:sig_angle_loc_map}). The variance between subjects was 174.867. 
-                                                                                            
+The LMM model was fitted using that reference location, No. 20. The results (see table \ref{tab:angle_loc}) show a significant effect of 12 starting locations listed in the table \ref{tab:sig_angle_loc} on the dependent variable. From the 12 locations with a significant effect, 7 were meaningful locations and from the 15 non-significant locations, 6 were meaningful (see figure \ref{fig:sig_angle_loc_map}). The variance between subjects was 174.867. The residuals show a slight skew (see figure \ref{resid_angle_loc})
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=100mm]{figures/residuals_angle_loc_23.png}
+	\caption[Residuals of LMM absolute angular deviation by starting location]{Residuals of LMM absolute angular deviation by starting location.}
+	\label{fig:resid_angle_loc}
+\end{figure}
+                                                                       
                                                                                    \rowcolors{1}{light-gray}{light-gray}
 \begin{longtable}{p{4cm}p{2cm}p{2cm}p{2cm}l}
 	\hiderowcolors
@@ -221,8 +228,15 @@ In comparison to the starting location No. 20 (fast food restaurant), the refere
 
 The starting location No. 7 (bear) which was a non-meaningful location was chosen as the intercept for the model RT predicted by starting locations. This decision was made based on the comparison of medians of RT from each starting location to the overall median of 6.01s. Here the median was considered as the measure of central tendency because the medians were more normally distributed than means. Location No. 7 had a median of 6.02s and an absolute difference of 0.01s from the overall median. However, starting location No. 29 (restaurant) had also the same difference from the overall median. Hence their mean difference to the overall mean of RT was also secondarily taken into account for the final choice. Location No. 7 had a smaller absolute difference of 0.03s compared to location No. 29 with an absolute difference of 0.55s to the mean. 
 
-The LMM model was fitted using reference location No. 7. The results (see table \ref{tab:RT_loc}) showed a significant effect of 7 starting locations (listed in the table \ref{tab:sig_RT_loc}) on the dependent variable. From the 7 locations with a significant effect, 2 were meaningful locations and from the 20 non-significant locations, 12 were meaningful (see figure \ref{fig:sig_RT_loc_map}). The subject variance of the reaction times was 3.762.
+The LMM model was fitted using reference location No. 7. The results (see table \ref{tab:RT_loc}) showed a significant effect of 7 starting locations (listed in the table \ref{tab:sig_RT_loc}) on the dependent variable. From the 7 locations with a significant effect, 2 were meaningful locations and from the 20 non-significant locations, 12 were meaningful (see figure \ref{fig:sig_RT_loc_map}). The subject variance of the reaction times was 3.762. Residuals of this analysis were slightly skewed (see figure \ref{fig:resid_RT_loc}).
 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=100mm]{figures/residuals_RT_loc_23.png}
+	\caption[Residuals of LMM RT by starting location]{Residuals of LMM RT by starting location.}
+	\label{fig:resid_RT_loc}
+\end{figure}
 
 \rowcolors{1}{light-gray}{light-gray}
 \begin{longtable}{p{4cm}p{2cm}p{2cm}p{2cm}l}
