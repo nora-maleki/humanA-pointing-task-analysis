@@ -170,7 +170,19 @@
 \usepackage[toc,page]{appendix}
 \geometry{a4paper, portrait, tmargin=1.5in, bmargin=1.5in, outer=1.5in}
 
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{dcolumn}
+\usepackage{arydshln}
 
+\usepackage{tabularx}
+\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
+\newcommand\clearrow{\global\let\rowmac\relax}
+\clearrow
+
+\usepackage{afterpage}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
 
 %% ========================================================================
@@ -209,13 +221,13 @@
 %% ========================================================================
 \begin{document}
 
+\renewcommand{\arraystretch}{1.5}
 \rmfamily
 \frontmatter                    %% KOMA: roman page numbers and such; only available in scrbook
 
 \input{\mytitlepage}
 
 \input{template/declaration_UOS}
-
 
 %% include the abstract without chapter number but include it on table of contents:
 \cleardoublepage
@@ -224,6 +236,7 @@
 
 \tableofcontents
 
+\setcounter{tocdepth}{1}
 \listoffigures
 
 \listoftables
