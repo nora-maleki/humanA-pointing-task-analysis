@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  The effect of the task locations on a pointing task
+  performed in a VR spatial navigation study
+message: >-
+  If you use the content of this repository, please
+  cite it using the metadata from this file.
+type: dataset
+authors:
+  - given-names: Nora
+    family-names: Maleki
+repository: >-
+  https://github.com/nora-maleki/humanA-pointing-task-analysis
+abstract: >-
+  This repository contains the work of the B.Sc.
+  thesis in Cognitive Science of Nora Maleki at the
+  University of Osnabrück with the supervision of
+  M.Sc. Tracy Sánchez Pacheco and Prof. Dr. rer. nat.
+  Gordon Pipa.    
+keywords:
+  - >-
+    spatial navigation, linear mixed models, python,
+    VR
+license: CC-BY-NC-SA-4.0
+date-released: '2022-08-01'
