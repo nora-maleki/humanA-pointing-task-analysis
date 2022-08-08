@@ -46,9 +46,9 @@ After inserting the participant ID and choosing the preferred language the explo
 
 \subsection{Testing}
 
-Testing comprised of one session of approximately 2 hours. The testing starts after inputting the participant ID and choosing the language. There is then a tutorial scene outside of the main city used in the experiment for participants to get acquainted with how to use the controller for performing the tasks. 
+Testing comprised of one session of approximately 2 hours. The testing started after inputting the participant ID and choosing the language. Testing continued with a tutorial scene outside of the main city used in the experiment for participants to get acquainted with how to use the controller for performing the tasks. 
 
-Testing was a pointing task comprising 336 trials performed from 28 different starting locations in the city (see figure \ref{fig:starting_locs}). At each starting location, 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without human agents) for each participant individually. Some examples are shown in figure \ref{fig:target_photos}. 
+Testing was a pointing task comprising 336 trials performed from 28 different starting locations in the city (see figure \ref{fig:starting_locs}). At each starting location, 12 target buildings were randomly chosen from a pull of 112 targets (56 task buildings with and without human agents) for each participant individually (see figure \ref{fig:target_photos}). 
 
 \begin{figure}[!htb]
 	\raggedright
@@ -141,7 +141,7 @@ In each trial, a photo of one of the task buildings, with or without a human age
 	\label{fig:photo_positions}
 \end{figure}
 
-Since there was no visual virtual body, there was a green dashed laser beam (visible in figures \ref{fig:photo_position_center}) attached to the virtual hand of the participants that moved as they moved their hands. The purpose of the laser beam was to assist the participants with the visualization of the direction they are pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building is located from their current location, a countdown timer appeared on the bottom center of the screen (see figure \ref{fig:timer}) and terminated the trial after 10 seconds if there was still no answer given. 
+Since there was no visual virtual body, there was a green dashed laser beam (visible in figures \ref{fig:photo_position_center}) attached to the virtual hand of the participants that moved as they moved their hands. The purpose of the laser beam was to assist the participants with the visualization of the direction they were pointing at. The maximum duration of each trial was 30 seconds. If there was no answer given to the task after 20 seconds from the start of the trial, i.e., no direction was selected by the participant indicating in which direction the target building was located from their current location, a countdown timer appeared on the bottom center of the screen (see figure \ref{fig:timer}) and terminated the trial after 10 seconds if there was still no answer given. 
 
 
 \begin{figure}[!htb]
@@ -151,20 +151,20 @@ Since there was no visual virtual body, there was a green dashed laser beam (vis
 	\label{fig:timer}
 \end{figure}
 
-Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. Once pressing the button it locked the laser beam onto a direction and detached it from the hand. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or running out of time. Behavioral and technical data, e.g., the chosen direction, participant position, and rotation, reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and pose during the exploration sessions. A gray screen fade-out and fade-in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving inside the city.
+Selecting an answer for the task, i.e., selecting the direction of the target building was possible with a button press. Once pressing the button it locked the laser beam onto a direction and detached it from the hand. The participants had the option to either confirm the chosen direction with the same button or cancel it with another. Moving on to the next trial was the result of either the participant confirming a direction or running out of time. Behavioral and technical data, e.g., the chosen direction, participant position, and rotation and reaction times were gathered during each trial. The human agents were present during the testing in the city at their exact designated positions and pose during the exploration sessions. A gray screen fade-out and fade-in occurred while transporting the participants from their current location to another starting location. This was to serve the purpose of decreasing the chance of motion sickness and also avoiding leaking environmental information while moving inside the city.
 
 
 \section{Analysis method}
 
-The data of this experiment is gathered from unity in JSON \footnote{Introducing JSON: \href{https://www.json.org/json-en.html}{https://www.json.org/json-en.html}} format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. For the preprocessing the pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010}, numpy \autocite{harris2020array} and scipy \autocite{2020SciPy-NMeth} libraries, and for the analysis python's statmodels \autocite{seabold2010statsmodels} module were utilized. Matplotlib \autocite{Hunter:2007} and Seaborn \autocite{Waskom2021} were used for the visualizations.
+The data of this experiment was gathered from unity in JSON \footnote{Introducing JSON: \href{https://www.json.org/json-en.html}{https://www.json.org/json-en.html}} format. All the further processes for analysis were done in python \autocite{10.5555/1593511} v3.8. For the preprocessing the pandas \autocite{reback2022pandas, mckinney-proc-scipy-2010}, numpy \autocite{harris2020array} and scipy \autocite{2020SciPy-NMeth} libraries, and for the analysis python's statmodels \autocite{seabold2010statsmodels} module were utilized. Matplotlib \autocite{Hunter:2007} and seaborn \autocite{Waskom2021} were used for the visualizations.
 
-After importing and converting the data into a pandas dataframe, the preprocessing is done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} is derived. The variable contains the absolute angular deviation of the participant's chosen direction from the actual target position. 
+After importing and converting the data into a pandas dataframe, the preprocessing was done to prepare the data for analysis. In this process the dependent variable {\emphasize absolute\_180\_angle} was derived. The variable contained the absolute angular deviation of the participant's chosen direction from the actual target position. 
 
 \subsection{Preprocessing}
 
-Different functions of pandas {\emphasize (pd)} and numpy {\emphasize (np)} used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) are taken into account. The up direction (y) was excluded as it is not relevant for the analysis at hand. 
+Different functions of pandas {\emphasize (pd)} and numpy {\emphasize (np)} were used for the preprocessing. In all the calculations involving directions and positions, only the right direction (x) and the forward direction (z) were taken into account. The up direction (y) was excluded as it is not relevant for the analysis at hand. 
 
-The main preprocessing steps are as follows:
+The main preprocessing steps were as follows:
 
 \begin{enumerate}
 	\item Removed trials in which the participants did not select any direction. These were the trials that were terminated due to timeout. Hence, only the trials where their respective TimeOut variable was False were kept for the analysis. a total of 20 trials were removed. \\
@@ -172,17 +172,17 @@ The main preprocessing steps are as follows:
 	\item Calculated the participant's chosen direction's absolute angular deviation from the actual location of the target building.
 	
 	\begin{enumerate}
-		\item Translated the target building's center position {\emphasize(Tpos)} by the participant's body position {\emphasize(Ppos)} to be able to derive the translated building center position {\emph{Tpos\_t}} take the body position as the origin at the (0,0) coordinates.
+		\item Translated the target building's center position {\emphasize(Tpos)} by the participant's body position {\emphasize(Ppos)} to be able to derive the translated building center position {\emph{Tpos\_t}} to make the body position as the origin at the (0,0) coordinates.
 		
 			\begin{align*}
 				Tpos\_t_{x,z}= Tpos_{x,z} - Ppos_{x,z}
 			\end{align*}
 		
-		The direction vector of the participant's chosen direction doesn't need to be translated because unity's output for a direction is a normalized vector and therefore its origin lies already at (0,0).\\
+		The direction vector of the participant's chosen direction didn't need to be translated because unity's output for a direction was a normalized vector and therefore its origin lied already at (0,0).\\
 		
-		\item Now that body position is at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction {\emphasize(Cdir)} to the positive x-axis and the translated building center position {\emphasize(Tpos\_t)} to the positive x-axis were calculated using numpy arctan2(z, x) \footnote{Numpy arctan2: \href{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}} function. This function calculates the angle in radian between the positive x-axis and the vector given to the function as a parameter. \\
+		\item Now that body position was at (0,0) with respect to the translated building center position, the angle difference between the participant's chosen direction {\emphasize(Cdir)} to the positive x-axis and the translated building center position {\emphasize(Tpos\_t)} to the positive x-axis were calculated using numpy arctan2(z, x) \footnote{Numpy arctan2: \href{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}{https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html}} function. This function calculated the angle in radian between the positive x-axis and the vector given to the function as a parameter. \\
 		
-		Due to the translation done in step \emph{a} the body position was implicitly translated to the origin (0,0), i.e., subtracting body position from body position results in (0,0), it was possible to pass the z and x coordinates of the {\emphasize Tpos\_t} and the {\emphasize Cdir} to the arctan2 function separately to calculate the angle between the {\emphasize Cdir} and the positive x-axis {\emphasize (Cdir\_to\_x)} and the {\emphasize Tpos\_t} and the positive x-axis {\emphasize (Tpos\_to\_x)}. The results are directly translated to degree utilizing numpy rad2deg() \footnote{Numpy rad2deg: \href{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}} function.
+		Due to the translation done in step \emph{a} the body position was implicitly translated to the origin (0,0), i.e., subtracting body position from body position resulted in (0,0), it was possible to pass the z and x coordinates of the {\emphasize Tpos\_t} and the {\emphasize Cdir} to the arctan2 function separately to calculate the angle between the {\emphasize Cdir} and the positive x-axis {\emphasize (Cdir\_to\_x)} and the {\emphasize Tpos\_t} and the positive x-axis {\emphasize (Tpos\_to\_x)}. The results were directly translated to degree utilizing numpy rad2deg() \footnote{Numpy rad2deg: \href{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}{https://numpy.org/doc/stable/reference/generated/numpy.rad2deg.html}} function.
 	
 		\begin{align*}
 			Tpos\_to\_x_{\theta} & = np.rad2deg(np.arctan2(Tpos\_t_{z}, Tpos\_t_{x})) \\
@@ -217,7 +217,7 @@ The main preprocessing steps are as follows:
 			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360_{\theta} - Cdir\_to\_x\_360_{\theta}) + 180) \% 360 - 180
 		\end{align*}
 	
-		\item The final step was to create {\emphasize absolute\_180\_angles}, the dependant variable for the main analysis in LMM. This variable stores the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values is that the direction of the deviation is not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values is done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
+		\item The final step was to create {\emphasize absolute\_180\_angles}, the dependent variable for the main analysis in LMM. This variable stored the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values was that the direction of the deviation was not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values was done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
 		
 		\begin{align*}
 			absolute\_180\_angles_{\theta} = np.abs(signed\_180\_angles_{\theta})
@@ -236,7 +236,7 @@ The main preprocessing steps are as follows:
 
 
 \subsection{Analysis}
-Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the MixedLM function \footnote{Statsmodels function for linear mixed effects model: \\ \href{https://www.statsmodels.org/dev/generated/statsmodels.regression.mixed\_linear\_model.MixedLM.html}{https://www.statsmodels.org/dev/generated/statsmodels.regression.mixed\_linear\_model.MixedLM.html}} from python's statmodels module were used. Participants' ID is the grouping component of all the models.
+Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were chosen as the method of analysis. For that the MixedLM function \footnote{Statsmodels function for linear mixed effects model: \\ \href{https://www.statsmodels.org/dev/generated/statsmodels.regression.mixed\_linear\_model.MixedLM.html}{https://www.statsmodels.org/dev/generated/statsmodels.regression.mixed\_linear\_model.MixedLM.html}} from python's statmodels module were used. Subject ID is the grouping component of all the models.
 
 \subsubsection{Independent variables}
 
@@ -249,47 +249,29 @@ Due to the hierarchical structure of the data, Linear Mixed Models (LMM) were ch
 \subsubsection{Dependent variables}
 
 \begin{enumerate}
-	\item \textbf{Absolute angular deviation} {\emphasize (absolute\_180\_angles)}: the absolute value of the angular deviation of the direction chosen by the participant from the actual location of the target building shown at each trial. Two models are used to predict this dependent variable. \\
+	\item \textbf{Absolute angular deviation} {\emphasize (absolute\_180\_angles)}: the absolute value of the angular deviation of the direction chosen by the participant from the actual location of the target building shown at each trial. The following model was used to predict this dependent variable. 
 	
-	\begin{enumerate}
-		\item
-		\begin{align*}
-			absolute \; angular \; error \sim starting \; locations + (1 | subject)
-		\end{align*}
-	
-		\item 
-		\begin{align*}
-			absolute \; angular \; error \sim &starting \; locations + distance \; to \; target \\
-			+ &starting \; locations \; * \; distance \; to \; target + (1 | subject)
-		\end{align*}
-	\end{enumerate}
+	\begin{align*}
+		absolute \; angular \; error \sim starting \; locations + (1 | subject)
+	\end{align*}
 	
 
-	\item \textbf{Reaction times} {\emphasize (RT)}: this variable stores the duration between the start of each trial and the time the participants confirmed a direction as their response. The beginning timestamp of the trial is directly after the go cue is completed and the end timestamp instantly after the response is given. Calculating the duration is done in unity. 
+	\item \textbf{Reaction times} {\emphasize (RT)}: this variable stored the duration between the start of each trial and the time the participants confirmed a direction as their response. The beginning timestamp of the trial was directly after the go cue was completed and the end timestamp instantly after the response was given. Calculating the duration was done in unity. 
 	
 	\begin{align*}
 		RT = end\_timestamp - begin\_timestamp
 	\end{align*}
 
-	 For the analysis two models are used to predict this dependent variable.\\
+	 The following model were used to predict this dependent variable.
 	 
-	 
-	 \begin{enumerate}
-	 	\item
-	 	\begin{align*}
-	 		reaction \; times \sim starting \; locations + (1 | subject)
-	 	\end{align*}
-	 	
-	 	\item 
-	 	\begin{align*}
-	 		reaction \; times \sim &starting \; locations + distance \; to \; target \\
-	 		+ &starting \; locations \; * \; distance \; to \; target + (1 | subject)
-	 	\end{align*}
-	 \end{enumerate}
+	 \begin{align*}
+	 	reaction \; times \sim starting \; locations + (1 | subject)
+	 \end{align*}
  
 \end{enumerate}
 
 
+\subsection{Data accessibility}
 
-
+To access the data and all the codes written for the analysis of this thesis, please refer to \textcite{Maleki_The_effect_of_2022}.
 
