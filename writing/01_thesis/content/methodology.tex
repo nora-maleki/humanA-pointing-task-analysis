@@ -1,6 +1,6 @@
 \chapter{Methodology}
 
-This thesis is a small part of the Human-A project, a PhD project of M.Sc. Tracy Sanchez Pacheco, at the Neuroinformatics department of Cognitive Science institute of the University of Osnabrück. The project contains different M.Sc. and B.Sc. theses work. 
+This thesis is a small part of the Human-A project, a Ph.D. project of M.Sc. Tracy Sanchez Pacheco, at the Neuroinformatics department of Cognitive Science institute of the University of Osnabrück. The project contains different M.Sc. and B.Sc. theses work. 
 
 \section{Participants}
 
@@ -11,7 +11,7 @@ Due to the Covid-19 pandemic sessions were conducted according to the laboratory
 3 participants were excluded due to not being able to comply with the experimental requirements, i.e., attending the different sessions in less than 3 days and more than 4 hours apart.
 
 \section{Data gathering}
-The data used in this work is gathered with the hard work of Tracy Sanchez Pacheco, Kaya Gärtner and Mohammad Ghorbani.
+The data used in this work is gathered with the hard work of Tracy Sánchez Pacheco, Kaya Gärtner, and Mohammad Ghorbani.
 
 \section{Experimental Design}
 
@@ -216,9 +216,12 @@ The main preprocessing steps were as follows:
 		
 		\item Calculated the angular difference between the selected direction {\emphasize (Cdir\_to\_x\_360)} and the target building {\emphasize (Tpos\_to\_x\_360)}. They were directly converted to the signed 2 quadrant environment.
 		
-		\begin{align*}
-			signed\_180\_angles_{\theta} = ((Tpos\_to\_x\_360_{\theta} - Cdir\_to\_x\_360_{\theta}) + 180) \% 360 - 180
-		\end{align*}
+			\begin{align*}
+				signed\_180\_angles_{\theta} = & \\
+				& ((Tpos\_to\_x\_360_{\theta} - Cdir\_to\_x\_360_{\theta}) \\
+				& + 180) \% 360 - 180
+			\end{align*}
+		
 	
 		\item The final step was to create {\emphasize absolute\_180\_angles}, the dependent variable for the main analysis in LMM. This variable stored the absolute value of the angular differences contained in {\emphasize signed\_180\_angles}. The reason for using absolute values was that the direction of the deviation was not a deciding factor in how accurate the participants performed the pointing task. Taking the absolute values was done with numpy abs() \footnote{Numpy absolute: \href{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}{https://numpy.org/doc/stable/reference/generated/numpy.absolute.html}} function.
 		
