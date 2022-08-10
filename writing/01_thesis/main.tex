@@ -181,6 +181,11 @@
 \clearrow
 
 \usepackage{afterpage}
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \addbibresource{references.bib}
@@ -228,7 +233,6 @@
 \input{\mytitlepage}
 
 \input{template/declaration_UOS}
-
 %% include the abstract without chapter number but include it on table of contents:
 \cleardoublepage
 \input{content/abstract}
@@ -236,10 +240,28 @@
 
 \tableofcontents
 
+\newpage
+\shipout\null
+
 \setcounter{tocdepth}{1}
 \listoffigures
 
 \listoftables
+
+\newpage
+\shipout\null
+
+\markboth{}{}
+
+\begin{minipage}[l]{80mm}
+	\vspace{120pt} 
+	\leftskip=5em
+	Imagine a long blackout, the eyes are closed and there is no sound. The consciousness is slowly coming back and the question arises: where am I?\\
+\end{minipage}
+
+\newpage
+\shipout\null
+\vspace{20pt}
 
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
@@ -254,6 +276,8 @@
 
 \appendix
 \addpart*{Appendix}
+\newpage
+\shipout\null
 \include{content/appendix/appendix}
 
 %\printbibliography[notsubtype=game]
