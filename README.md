@@ -22,5 +22,11 @@ ________________________________________________________________________________
 
 ### References:
 
+<p><cite><i>N. (2017, February 5). LaTeX-KOMA-template/title_Thesis_TU_Graz.tex at master · novoid/LaTeX-KOMA-template.</i></cite>  GitHub. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://github.com/novoid/LaTeX-KOMA-template/blob/master/template/title_Thesis_TU_Graz.tex
+
+
 <p><cite><i>Creative Commons Licenses for GitHub Projects.</i></cite> (2018). GitHub. <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://github.com/santisoler/cc-licenses</p>
+
+
